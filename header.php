@@ -36,42 +36,43 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<div id="wrapper-navbar" class="d-none fixed-top" itemscope itemtype="http://schema.org/WebSite">
 
 	</div><!-- #wrapper-navbar end -->
-
-	<div id="header-background" class="d-flex flex-column justify-content-center align-items-center">
-		<div class="menu-wrapper">
-			<!-- The WordPress Menu goes here -->
-			<?php wp_nav_menu(
-				array(
-					'theme_location'  => 'primary',
-					'container_class' => 'h-100 align-items-center justify-content-center align-content-center',
-					'container_id'    => 'nav-wrapper',
-					'menu_class'      => '',
-					'fallback_cb'     => '',
-					'menu_id'         => 'main-menu',
-					'depth'           => 2,
-					'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-				)
-			); ?>
-		</div>
-		<div class="menu-toggle">
-			<div class="line"></div>
-		</div>
-		<div class="brand-title">
-			<h2>Juventa Online</h2>
-		</div>
-		<div class="header-text">
-			<h3>Ontzorgen</h3>
-			<h3>Dat is wat we doen</h3>
-			<p>Juventa is er om jou te helpen meer uit je online activiteiten<br/> te halen op een zo makkelijk mogelijke manier</p>
-		</div>
-		<div class="contact-info">
-			<div class="button d-flex justify-content-center align-items-center"><i class="fas fa-mobile-alt"></i></div>
-			<div class="info">
-				<a href="mailto:info@juventaonline.nl">info@juventaonline.nl</a>
-				<a href="tel:060123456789">06 321 54 67</a>
+	<div class="header-wrapper">
+		<div id="header-background" class="d-flex flex-column justify-content-center align-items-center">
+			<div class="menu-wrapper">
+				<!-- The WordPress Menu goes here -->
+				<?php wp_nav_menu(
+					array(
+						'theme_location'  => 'primary',
+						'container_class' => 'h-100 align-items-center justify-content-center align-content-center',
+						'container_id'    => 'nav-wrapper',
+						'menu_class'      => '',
+						'fallback_cb'     => '',
+						'menu_id'         => 'main-menu',
+						'depth'           => 2,
+						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+					)
+				); ?>
+			</div>
+			<div class="menu-toggle">
+				<div class="line"></div>
+			</div>
+			<div class="brand-title">
+				<h2>Juventa Online</h2>
+			</div>
+			<div class="header-text">
+				<h3>Ontzorgen</h3>
+				<h3>Dat is wat we doen</h3>
+				<p>Juventa is er om jou te helpen meer uit je online activiteiten<br/> te halen op een zo makkelijk mogelijke manier</p>
+			</div>
+			<div class="contact-info">
+				<div class="button d-flex justify-content-center align-items-center"><i class="fas fa-mobile-alt"></i></div>
+				<div class="info">
+					<a href="mailto:info@juventaonline.nl">info@juventaonline.nl</a>
+					<a href="tel:060123456789">06 321 54 67</a>
+				</div>
 			</div>
 		</div>
+		<div id='stars'></div>
+		<div id='stars2'></div>
+		<div id='stars3'></div>
 	</div>
-	<div id='stars'></div>
-	<div id='stars2'></div>
-	<div id='stars3'></div>

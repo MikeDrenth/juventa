@@ -15,7 +15,7 @@ html {
 }
 
 body {
-	background-color: #070d31;
+	background-color: #070a1b;
   	color: #999999;
   	@include fluid-type($min_width, $max_width, $min_font, $max_font);
 	font-family: 'Karla';
@@ -348,16 +348,16 @@ body.loaded {
 }
 
 #header-background {
-	background: #070d31;
 	background-position: center center;
 	color: #FFF;
-	margin-bottom: 225px;
 	height: 100vh;
 	width: 100%;
 }
 
 .wrapper {
-	padding: 0;
+	padding: 250px 0 0 0;
+	background: #070a1b;
+	position: relative;
 }
 
 .title-row {
@@ -383,6 +383,45 @@ body.loaded {
 			}
 		}
 	}
+}
+
+.light-background {
+	background: white;
+	padding: 250px 0;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	p {
+		color: #070a1b;
+		opacity: 0;
+	}
+
+	h4 {
+		color: #070a1bb3;
+	}
+
+	a {
+		color: #070a1b;
+	}
+
+	&.startAnimation {
+		h1,
+		h2,
+		h3 {
+			animation: showTitles 1s 1.5s forwards;
+		}
+
+		h4 {
+			animation: showTitles 1s 2s forwards;
+		}
+
+		p {
+			animation: showTitles 1s 2.5s forwards;
+		}
+	}
+
 }
 
 @media (min-width: 768px) {
@@ -423,7 +462,7 @@ body.loaded {
 		}
 
 		.items-title {
-			&.showTitles {
+			&.startAnimation {
 				div {
 					animation: showTitles 1s 1s forwards;
 					transition: .5s;

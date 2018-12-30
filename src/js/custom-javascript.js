@@ -27,7 +27,7 @@ jQuery(document).ready(function($){
       new Waypoint.Inview({
         element: this,
         enter: function(direction) {
-          $(this.element).addClass('showTitles');
+          $(this.element).addClass('startAnimation');
         }
       });
     });
