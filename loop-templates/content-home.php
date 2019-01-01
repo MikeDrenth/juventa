@@ -7,7 +7,7 @@
 
 ?>
 
-<div class="container fadeAnimation">
+<div id="row1" class="container fadeAnimation">
 	<div class="row justify-content-center title-row">
 		<div class="col-12 col-md-10">
 			<h3>Door middel van creativiteit, data, kennis en kunde laten wij organisaties, merken en bedrijven groeien.</h3>
@@ -49,7 +49,7 @@
 	</div>
 </div>
 
-<div class="highlights">
+<div id="highlights" class="highlights">
 	<div class="items d-flex align-items-center">
 		<div class="items-wrapper">
 			<h2>Laatste projecten</h2>
@@ -79,7 +79,7 @@
 	</div>
 </div>
 
-<div class="light-background fadeInOneByOne">
+<div id="row3" class="light-background fadeInOneByOne">
 	<div class="container row-3">
 		<div class="row justify-content-center title-row">
 			<div class="col-12 col-md-10">

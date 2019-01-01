@@ -27,15 +27,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 <div class="hfeed site" id="page">
-
 	<div class="loading-wrapper d-flex justify-content-center align-items-center">
 		<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 	</div>
-
-	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar" class="d-none fixed-top" itemscope itemtype="http://schema.org/WebSite">
-
-	</div><!-- #wrapper-navbar end -->
+	</div>
 	<div class="header-wrapper">
 		<div id="header-background" class="d-flex flex-column justify-content-center align-items-center">
 			<div class="menu-wrapper">
@@ -53,11 +49,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 					)
 				); ?>
 			</div>
-			<div class="menu-toggle">
-				<div class="line"></div>
-			</div>
-			<div class="brand-title">
-				<h2>Juventa Online</h2>
+			<div class="logo-wrapper">
+				<div class="menu-toggle">
+					<div class="line"></div>
+				</div>
+				<div class="brand-title">
+					<h2>Juventa Online</h2>
+				</div>
 			</div>
 			<div class="header-text">
 				<h3>Ontzorgen</h3>
