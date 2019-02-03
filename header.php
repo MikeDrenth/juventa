@@ -58,19 +58,22 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</div>
 			</div>
 			<div class="header-text">
-				<h3>Ontzorgen</h3>
-				<h3>Dat is wat we doen</h3>
-				<p>Juventa is er om jou te helpen meer uit je online activiteiten<br/> te halen op een zo makkelijk mogelijke manier</p>
+				<?php the_field('header_tekst'); ?>
 			</div>
 			<div class="contact-info">
 				<div class="button d-flex justify-content-center align-items-center"><i class="fas fa-mobile-alt"></i></div>
 				<div class="info">
-					<a href="mailto:info@juventaonline.nl">info@juventaonline.nl</a>
-					<a href="tel:060123456789">06 321 54 67</a>
+					<a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> info@juventaonline.nl</a>
+					<a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian: 06 321 542 67</a>
+					<a href="tel:0625277247"><i class="fas fa-mobile-alt"></i> Mike: 06 252 772 47</a>
+					<a href="tel:060123456789"><i class="fab fa-facebook-f"></i> Facebook</a>
 				</div>
 			</div>
+			<!-- particles.js container --> 
+			<div id="particles-js"></div> 
 		</div>
-		<div id='stars'></div>
+
+		<!--div id='stars'></div>
 		<div id='stars2'></div>
-		<div id='stars3'></div>
+		<div id='stars3'></div-->
 	</div>

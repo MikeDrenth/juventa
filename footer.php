@@ -9,32 +9,56 @@
 
 
 ?>
-<div class="footer-wrapper p-5">
+<div class="footer-wrapper d-flex flex-column justify-content-center">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4">
                 <h3>Contact</h3>
-                <p>Mike: 06 242 72 48</p>
-                <p>Fabian: 06 123 32 94</p>
-                <p>Mail: <a href="mailto:info@juventaonline.nl">info@juventaonline.nl</a></p>
+                <ul>
+                    <li><a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian</a></li>
+                    <li><a href="tel:0625277247"><i class="fas fa-mobile-alt"></i> Mike</a></li>
+                    <li><a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> Stuur een e-mail</a></li>
+                    <li><a href="tel:060123456789"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
+                <ul>
             </div>
             <div class="col-12 col-md-4">
                 <h3>Bekijk ook</h3>
-                <p><a href="">Algemene voorwaarden</a></p> 
-                <p><a href="">Privacy Policy</a></p>
-                <p><a href="">Cookies</a></p>
+                <ul>
+                    <li><a href="">Algemene voorwaarden</a></li> 
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Cookies</a></li>
+                </ul>
             </div>
             <div class="col-12 col-md-4">
-                <h3>Socials</h3>
-                <p>Facebook</p> 
-                <p>Linkedin</p>
-                <p>Twitter</p>
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian</a></li>
+                    <li><a href="tel:0625277247"><i class="fas fa-mobile-alt"></i> Mike</a></li>
+                    <li><a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> Stuur een e-mail</a></li>
+                    <li><a href="tel:060123456789"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
+                <ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12">
+                <ul>
+                    <li>
+                        <a href="sitemap.html">Sitemap</a>
+                    </li>
+                    <li>
+                        Copyright &copy; Juventa Online <?php echo date("Y"); ?>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
-<? wp_footer(); ?>
+<?php wp_footer(); ?>
+
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
 </body>
 

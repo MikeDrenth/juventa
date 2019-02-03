@@ -1,8 +1,6 @@
 <?php
 /**
- * Blank content partial template.
- *
- * @package understrap
+ * Content page for home
  */
 
 ?>
@@ -16,8 +14,8 @@
 	<div class="row justify-content-center content-row">
 		<div class="col-12 col-lg-2">
 			<ul>
-				<li>Social</li>
-				<li>SEO / SEA</li>
+				<li><a href="">Social</a></li>
+				<li><a href="">SEO / SEA</a></li>
 				<li>Web Analytics</li>
 				<li>Content</li>
 			</ul>
