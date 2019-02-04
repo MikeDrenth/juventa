@@ -128,6 +128,15 @@ body.loaded {
 }
 
 .logo-wrapper {
+	&.dark-background {
+		background: #161a39;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100px;
+		width: 100%;
+		z-index: 500;
+	}
 	&.fixed {
 		background: #000000d6;
 		overflow: hidden;
@@ -137,6 +146,11 @@ body.loaded {
 		top: 0;
 		left: 0;
 		z-index: 500;
+	}
+
+	img {
+		max-width: 300px;
+		height: auto;
 	}
 }
 
@@ -581,12 +595,20 @@ body.loaded {
 					color: #999;
 					cursor: pointer;
 					font-size: 40px;
+
+					a {
+						color: inherit;
+					}
 				}
 
 				&:hover,
 				&.active {
 					h3 {
 						color: white;
+
+						a {
+							text-decoration: none;
+						}
 					}
 				}
 			}
@@ -658,8 +680,12 @@ body.loaded {
 	position: relative;
 	z-index: 400;
 
+	> div:nth-child(1) {
+		padding-top: 4rem;
+	}
+
 	> div:nth-child(2) {
-		padding: 2rem 0;
+		margin-top: auto;
 	}
 
 	h3 {
@@ -670,7 +696,7 @@ body.loaded {
 		color: white;
 
 		&:hover {
-			color: black;
+			color: #ff4242;
 			text-decoration: none;
 		}
 	}

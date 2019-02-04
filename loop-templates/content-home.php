@@ -4,79 +4,68 @@
  */
 
 ?>
-
-<div id="row1" class="container fadeAnimation">
-	<div class="row justify-content-center title-row">
-		<div class="col-12 col-md-10">
-			<h3>Door middel van creativiteit, data, kennis en kunde laten wij organisaties, merken en bedrijven groeien.</h3>
-		</div>
-	</div>
-	<div class="row justify-content-center content-row">
-		<div class="col-12 col-lg-2">
-			<ul>
-				<li><a href="">Social</a></li>
-				<li><a href="">SEO / SEA</a></li>
-				<li>Web Analytics</li>
-				<li>Content</li>
-			</ul>
-		</div>
-		<div class="col-12 col-lg-3">
-			<ul>
-				<li>Conversie optimalizatie</li>
-				<li>Full stack development</li>
-				<li>Marketing automatisering</li>
-				<li>Filler voor 4e item</li>
-			</ul>
-		</div>
-		<div class="col-12 col-lg-2">
-			<ul>
-				<li>Strategie</li>
-				<li>Websites</li>
-				<li>Webshops</li>
-				<li>Content</li>
-			</ul>
-		</div>
-		<div class="col-12 col-lg-2">
-			<ul>
-				<li>Usability</li>
-				<li>UX / UI Design</li>
-				<li>A / B Testing</li>
-				<li>Strategie</li>
-			</ul>
-		</div>
-	</div>
-</div>
-
-<div id="highlights" class="highlights">
-	<div class="items d-flex align-items-center">
-		<div class="items-wrapper">
-			<h2>Laatste projecten</h2>
-			<div class="items-title fadeInOneByOne">
-				<div class="title active" data-id="aronsohn">
-					<h3>Aronsohn</h3>
+<?php if( have_rows('diensten') ): ?>
+	<div id="row1" class="container fadeAnimation">
+		<?php while ( have_rows('diensten') ) : the_row();  ?>
+			<?php if( get_row_layout() == 'omschrijving' ): ?>
+				<div class="row justify-content-center title-row">
+					<div class="col-12 col-md-10">
+						<?php the_sub_field('tekst'); ?>
+					</div>
 				</div>
-				<div class="title" data-id="bravenewworld">
-					<h3>Brave new world</h3>
-				</div>
-				<div class="title" data-id="christophoor">
-					<h3>Christophoor</h3>
+			<?php endif; ?>
+		<?php endwhile; ?>
+		<div class="row justify-content-center ">
+			<div class="col-12 col-lg-8">
+				<div class="row content-row">
+					<?php while ( have_rows('diensten') ) : the_row();  ?>
+						<?php if( get_row_layout() == 'diensten' ): ?>
+							<div class="col-12 col-lg-4">
+								<?php the_sub_field('tekst'); ?>
+							</div>
+						<?php endif; ?>
+					<?php endwhile;?>
 				</div>
 			</div>
 		</div>
-		<div class="items-image">
-			<div class="image active" data-id="aronsohn">
-				<img src="<?=get_template_directory_uri()?>/img/aronsohn-preview.jpg">
+	</div>
+<?php endif; ?>
+<?php if( have_rows('portfolio') ): ?>
+	<div id="highlights" class="highlights">
+		<div class="items d-flex align-items-center">
+			<div class="items-wrapper">
+				<h2>Laatste projecten</h2>
+				<div class="items-title fadeInOneByOne">
+					<?php while ( have_rows('portfolio') ) : the_row();  ?>
+						<?php if( get_row_layout() == 'project' ): ?>
+							<?php 
+								$title = get_sub_field('titel');
+								$titleSlug = sanitize_title($title);
+							?>
+							<div class="title" data-id="<?=$titleSlug?>">
+								<h3><?=$title;?></h3>
+							</div>
+						<?php endif; ?>
+					<?php endwhile; ?>
+				</div>
 			</div>
-			<div class="image" data-id="christophoor">
-				<img src="<?=get_template_directory_uri()?>/img/christophoor.jpg">
-			</div>
-			<div class="image" data-id="bravenewworld">
-				<img src="<?=get_template_directory_uri()?>/img/bravenewworld.jpg">
+			<div class="items-image">
+				<?php while ( have_rows('portfolio') ) : the_row();  ?>
+					<?php if( get_row_layout() == 'project' ): ?>
+						<?php 
+							$projectImage = get_sub_field('afbeelding'); 
+							$title = get_sub_field('titel');
+							$titleSlug = sanitize_title($title);
+						?>
+						<div class="image" data-id="<?=$titleSlug?>">
+							<img src="<?=$projectImage['url']?>" alt="<?=$titleSlug?>">
+						</div>
+					<?php endif; ?>
+				<?php endwhile; ?>
 			</div>
 		</div>
 	</div>
-</div>
-
+<?php endif; ?>
 <div id="row3" class="light-background fadeInOneByOne">
 	<div class="container row-3">
 		<div class="row justify-content-center title-row">

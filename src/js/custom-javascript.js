@@ -27,9 +27,17 @@ jQuery(document).ready(function($){
 
     // Function: Fade animation on row3 when in view
     var row3 = document.getElementById("row3");
-    var elementWatcher = scrollMonitor.create(row3, -50);
+    var elementWatcher = scrollMonitor.create(row3, -200);
     elementWatcher.enterViewport(function() {
         $(row3).addClass('startAnimation');
+    });
+    // Add dark background to header
+    elementWatcher.fullyEnterViewport(function() {
+        $('.logo-wrapper').addClass('dark-background');
+    });
+    // Remove dark background from header
+    elementWatcher.exitViewport(function() {
+        $('.logo-wrapper').removeClass('dark-background');
     });
 
     // Function: Add class to logo wrapper div after scrolling 100px
@@ -41,21 +49,26 @@ jQuery(document).ready(function($){
       });
     }
 
-    // Set div to hide the loader after 2sec
+    // Set div to hide the pre-loader after 2sec
     setTimeout(function(){
         $('body').addClass('loaded');
         $('.header-text').addClass('visible');
     }, 2000);
 
+    // Add active to the 1st item to display after loading
+    $('.items-title .title:first-child').addClass('active');
+    $('.items-image .image:first-child').addClass('active');
+
     // Show correct image with title on homepage on hover
     $('.items-title .title').on("hover", function() {
       var dataAttr = $(this).attr('data-id');
-      $('.items-title .title').removeClass('active')
+      $('.items-title .title').removeClass('active');
       $(this).addClass('active');
       $('.items-image .image').removeClass('active');
       $('.items-image .image[data-id = '+dataAttr+']').addClass('active');
     });
 
+    // Funaction: Add particles in header
     particlesJS(
         "particles-js", 
         {"particles":

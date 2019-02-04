@@ -54,7 +54,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<div class="line"></div>
 				</div>
 				<div class="brand-title">
-					<h2>Juventa Online</h2>
+				<?php if ( function_exists( 'the_custom_logo' ) ) {
+					the_custom_logo();
+				} ?>
 				</div>
 			</div>
 			<div class="header-text">
