@@ -338,7 +338,8 @@ body.loaded {
 	z-index: 600;
 	transition: 0.5s;
 	align-items: center;
-	margin-right: auto;
+	margin-left: auto;
+	margin-right: 15px;
 	margin-bottom: 10px;
 
 	.line {
@@ -548,6 +549,7 @@ body.loaded {
 
 		h4 {
 			animation: fadeOpacity 1s 1.5s forwards;
+			margin-bottom: 3rem;
 		}
 
 		p {

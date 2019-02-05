@@ -121,13 +121,7 @@
 	<div class="container row-3">
 		<div class="row justify-content-center title-row">
 			<div class="col-12 col-md-10">
-				<h3>Wij zijn overtuigd van een full service benadering.</h3>
-				<h4>Geen tijdelijke en snelle aanpak, maar een proactieve, resultaatgerichte werkwijze met de focus op de lange termijn.</h4>
-			</div>
-		</div>
-		<div class="row justify-content-center content-row">
-			<div class="col-12 col-md-10">
-				<p>Full service is voor ons meer dan een team vol in-house specialisten. Wij geloven in de kracht van commitment. Kritisch kunnen zijn wanneer dat moet, en ondersteunend wanneer dat hoort. Dat verwachten wij andersom ook, want zo halen wij het beste in beide partijen naar boven.</p>
+				<?php echo get_field('content'); ?>
 			</div>
 		</div>
 	</div>
