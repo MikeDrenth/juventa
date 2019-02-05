@@ -28,54 +28,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="hfeed site" id="page">
 	<div class="loading-wrapper d-flex justify-content-center align-items-center">
-		<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-	</div>
-	<div id="wrapper-navbar" class="d-none fixed-top" itemscope itemtype="http://schema.org/WebSite">
-	</div>
-	<div class="header-wrapper">
-		<div id="header-background" class="d-flex flex-column justify-content-center align-items-center">
-			<div class="menu-wrapper">
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'h-100 align-items-center justify-content-center align-content-center',
-						'container_id'    => 'nav-wrapper',
-						'menu_class'      => '',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'depth'           => 2,
-						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-					)
-				); ?>
-			</div>
-			<div class="logo-wrapper">
-				<div class="menu-toggle">
-					<div class="line"></div>
-				</div>
-				<div class="brand-title">
+	<div class="logo-wrapper d-flex">
+			<div class="brand-title">
 				<?php if ( function_exists( 'the_custom_logo' ) ) {
 					the_custom_logo();
 				} ?>
-				</div>
 			</div>
-			<div class="header-text">
-				<?php the_field('header_tekst'); ?>
+			<div class="menu-toggle">
+				<div class="line"></div>
 			</div>
-			<div class="contact-info">
-				<div class="button d-flex justify-content-center align-items-center"><i class="fas fa-mobile-alt"></i></div>
-				<div class="info">
-					<a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> info@juventaonline.nl</a>
-					<a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian: 06 321 542 67</a>
-					<a href="tel:0625277247"><i class="fas fa-mobile-alt"></i> Mike: 06 252 772 47</a>
-					<a href="tel:060123456789"><i class="fab fa-facebook-f"></i> Facebook</a>
-				</div>
-			</div>
-			<!-- particles.js container --> 
-			<div id="particles-js"></div> 
 		</div>
-
-		<!--div id='stars'></div>
-		<div id='stars2'></div>
-		<div id='stars3'></div-->
+		<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+	</div>
+	<div id="wrapper-navbar" class="d-none fixed-top" itemscope itemtype="http://schema.org/WebSite">
 	</div>

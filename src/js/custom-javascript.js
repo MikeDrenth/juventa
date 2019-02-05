@@ -1,52 +1,64 @@
 jQuery(document).ready(function($){ 
 
-	// Show the contact info after clicking the button
-	$('.contact-info .button').on('click', function(){
-  		$('.contact-info .info').toggleClass('showMore');
-  	});
+    // Show the contact info after clicking the button
+    if ($(".contact-info .button").length) {
+        $('.contact-info .button').on('click', function(){
+            $('.contact-info .info').toggleClass('showMore');
+        });
+    }
 
-  	// Toggle show menu when clicking on the button
-  	$('.menu-toggle').on('click', function(){
-  		$(this).toggleClass('active');
-  		$('.menu-wrapper').toggleClass('show');
-    });
+    // Toggle show menu when clicking on the button
+    if ($(".menu-toggle").length) {
+        $('.menu-toggle').on('click', function(){
+            $(this).toggleClass('active');
+            $('.menu-wrapper').toggleClass('show');
+        });
+    }
+    
+    if($('#row1').length) {
+        // Function: Fade animation on row1 when in view
+        var row1 = document.getElementById("row1");
+        var elementWatcher = scrollMonitor.create(row1, -100);
+        elementWatcher.enterViewport(function() {
+            $(row1).addClass('zoomInFadeIn');
+        });
+    }
 
-    // Function: Fade animation on row1 when in view
-    var row1 = document.getElementById("row1");
-    var elementWatcher = scrollMonitor.create(row1, -100);
-    elementWatcher.enterViewport(function() {
-        $(row1).addClass('zoomInFadeIn');
-    });
+    if($('#highlights').length) {
+        // Function: Fade animation on highlights when in view
+        var highlights = document.getElementById("highlights");
+        var elementWatcher = scrollMonitor.create(highlights, -100);
+        elementWatcher.enterViewport(function() {
+            $('#highlights .items-title').addClass('startAnimation');
+        });
+    }
 
-    // Function: Fade animation on highlights when in view
-    var highlights = document.getElementById("highlights");
-    var elementWatcher = scrollMonitor.create(highlights, -100);
-    elementWatcher.enterViewport(function() {
-        $('#highlights .items-title').addClass('startAnimation');
-    });
+    if($('#row3').length) {
+        // Function: Fade animation on row3 when in view
+        var row3 = document.getElementById("row3");
+        var elementWatcher = scrollMonitor.create(row3, -200);
+        elementWatcher.enterViewport(function() {
+            $(row3).addClass('startAnimation');
+        });
+        // Add dark background to header
+        elementWatcher.fullyEnterViewport(function() {
+            $('.logo-wrapper').addClass('dark-background');
+        });
+        // Remove dark background from header
+        elementWatcher.exitViewport(function() {
+            $('.logo-wrapper').removeClass('dark-background');
+        });
+    }
 
-    // Function: Fade animation on row3 when in view
-    var row3 = document.getElementById("row3");
-    var elementWatcher = scrollMonitor.create(row3, -200);
-    elementWatcher.enterViewport(function() {
-        $(row3).addClass('startAnimation');
-    });
-    // Add dark background to header
-    elementWatcher.fullyEnterViewport(function() {
-        $('.logo-wrapper').addClass('dark-background');
-    });
-    // Remove dark background from header
-    elementWatcher.exitViewport(function() {
-        $('.logo-wrapper').removeClass('dark-background');
-    });
-
-    // Function: Add class to logo wrapper div after scrolling 100px
-    if($(window).width() < 991) { 
-      $(window).scroll(function() {
-        if ($(document).scrollTop() > 100) {
-          $('.logo-wrapper').addClass('fixed');
+    if($('.logo-wrapper').length) {
+        // Function: Add class to logo wrapper div after scrolling 100px
+        if($(window).width() < 991) { 
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 200) {
+            $('.logo-wrapper').addClass('fixed');
+            }
+        });
         }
-      });
     }
 
     // Set div to hide the pre-loader after 2sec
@@ -55,19 +67,20 @@ jQuery(document).ready(function($){
         $('.header-text').addClass('visible');
     }, 2000);
 
-    // Add active to the 1st item to display after loading
-    $('.items-title .title:first-child').addClass('active');
-    $('.items-image .image:first-child').addClass('active');
-
-    // Show correct image with title on homepage on hover
-    $('.items-title .title').on("hover", function() {
-      var dataAttr = $(this).attr('data-id');
-      $('.items-title .title').removeClass('active');
-      $(this).addClass('active');
-      $('.items-image .image').removeClass('active');
-      $('.items-image .image[data-id = '+dataAttr+']').addClass('active');
-    });
-
+    if ($(".items-title .title").length) {
+        // Add active to the 1st item to display after loading
+        $('.items-title .title:first-child').addClass('active');
+        $('.items-image .image:first-child').addClass('active');
+        // Show correct image with title on homepage on hover
+        $('.items-title .title').on("hover", function() {
+        var dataAttr = $(this).attr('data-id');
+        $('.items-title .title').removeClass('active');
+        $(this).addClass('active');
+        $('.items-image .image').removeClass('active');
+        $('.items-image .image[data-id = '+dataAttr+']').addClass('active');
+        });
+    }
+    
     // Funaction: Add particles in header
     particlesJS(
         "particles-js", 
