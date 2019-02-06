@@ -43,6 +43,7 @@
 				<a target="_blank" href="https://www.facebook.com/juventaonline/"><i class="fab fa-facebook-f"></i> Facebook</a>
 			</div>
 		</div>
+		<div class="scroll-down"><i class="fas fa-caret-down"></i></div>
 		<!-- particles.js container --> 
 		<div id="particles-js"></div> 
 	</div>
@@ -64,12 +65,14 @@
 			<?php endif; ?>
 		<?php endwhile; ?>
 		<div class="row justify-content-center ">
-			<div class="col-12 col-sm-8">
+			<div class="col-12">
 				<div class="row content-row">
 					<?php while ( have_rows('diensten') ) : the_row();  ?>
 						<?php if( get_row_layout() == 'diensten' ): ?>
 							<div class="col-12 col-sm-4">
-								<?php the_sub_field('tekst'); ?>
+								<div class="item">
+									<?php the_sub_field('tekst'); ?>
+								</div>
 							</div>
 						<?php endif; ?>
 					<?php endwhile;?>
@@ -83,14 +86,14 @@
 		<div class="items d-flex align-items-center">
 			<div class="items-wrapper">
 				<h2>Laatste projecten</h2>
-				<div class="items-title fadeInOneByOne">
+				<div class="items-title fadeInOneByOne d-none d-md-block">
 					<?php while ( have_rows('portfolio') ) : the_row();  ?>
 						<?php if( get_row_layout() == 'project' ): ?>
 							<?php 
 								$title = get_sub_field('titel');
 								$titleSlug = sanitize_title($title);
 							?>
-							<div class="title d-none d-sm-block" data-id="<?=$titleSlug?>">
+							<div class="title" data-id="<?=$titleSlug?>">
 								<h3><?=$title;?></h3>
 							</div>
 						<?php endif; ?>
@@ -107,7 +110,7 @@
 						?>
 						<div class="image" data-id="<?=$titleSlug?>">
 							<img src="<?=$projectImage['url']?>" alt="<?=$titleSlug?>">
-							<div class="title d-sm-none" data-id="<?=$titleSlug?>">
+							<div class="title d-md-none" data-id="<?=$titleSlug?>">
 								<h3><?=$title;?></h3>
 							</div>
 						</div>

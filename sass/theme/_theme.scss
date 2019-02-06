@@ -176,13 +176,46 @@ body.loaded {
 
 @media (min-width: 768px) {
 	.logo-wrapper {
-		height: 125px;
+		height: 80px;
 
 		img {
-			max-width: 500px;
+			max-width: 350px;
 			height: auto;
 		}
 	}
+}
+
+.scroll-down {
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 65px;
+	height: 65px;
+	background: #ffffff45;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 10vh;
+	left: 0;
+	right: 0;
+	margin: auto;
+	z-index: 500;
+	color: #ff4242;
+	font-size: 35px;
+
+	i {
+		border-radius: 50%;
+		background: white;
+		width: 40px;
+		height: 40px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	//animation: scrollDown 1s infinite;
 }
 
 .navbar {
@@ -233,6 +266,9 @@ body.loaded {
 
 .brand-title {
 	flex: 0 0 90%;
+	margin-bottom: -10px;
+	margin-left: 15px;
+	text-align: left;
 	h2 {
 		display: table-caption;
 		text-align: left;
@@ -242,18 +278,31 @@ body.loaded {
 	}
 }
 
+@media (min-width: 600px) {
+	.brand-title {
+		margin-bottom: -15px;
+	}
+}
+
 .header-text {
-	bottom: 40px;
+	bottom: 0;
 	position: absolute;
-	left: 90px;
+	left: 0;
 	color: hsla(0,0%,100%,.8);
 	z-index: 10;
+	padding-right: 40px;
+	right: 0;
+	top: 0;
+	width: 100%;
+	margin: auto;
+	height: 200px;
+	text-align: center;
 
 	h1,
 	h2,
 	h3 {
 		color: #FFF;
-		font-size: calc(48px + 8 * ((100vw - 320px)/ 880));
+		font-size: 35px;
 		line-height: 1.3;
 		margin: 0;
 	}
@@ -263,19 +312,29 @@ body.loaded {
 	}
 
 	&.visible {
-		animation: moveTextUp 1s;
+		//animation: moveTextUp 1s;
 	}
 }
 
 @media (min-width: 768px) {
 	.header-text {
-		left: 50px;
+		padding-right: 0;
+
+		h1,
+		h2,
+		h3 {
+			color: #FFF;
+			font-size: calc(35px + 8 * ((100vw - 320px)/ 880));
+			line-height: 1.3;
+			margin: 0;
+		}
 	}
 }
 
 @media (max-width: 991px) and (orientation: landscape) {
 	.header-text {
-		top: 100px;
+		top: 50vh;
+		bottom: 0;
 	}
 }
 
@@ -296,7 +355,7 @@ body.loaded {
 
 		ul {
 			margin: 0;
-			padding: 0;
+			padding: 100px 0 0 0;
 			list-style: none;
 
 			li {
@@ -319,7 +378,7 @@ body.loaded {
 		background: #ff4242;
 		width: 100%;
 		height: 100vh;
-		z-index: 100;
+		z-index: 400;
 
 
 		#nav-wrapper {
@@ -333,14 +392,12 @@ body.loaded {
 .menu-toggle {
 	cursor: pointer;
 	height: 20px;
-	position: relative;
+	position: absolute;
 	width: 30px;
+	right: 0px;
 	z-index: 600;
 	transition: 0.5s;
 	align-items: center;
-	margin-left: auto;
-	margin-right: 15px;
-	margin-bottom: 10px;
 
 	.line {
 		background: white;
@@ -453,15 +510,36 @@ body.loaded {
 		font-size: 24px;
 		line-height: 1.3;
 	}
+
+	h1,
+	h2 {
+		margin-bottom: 55px;
+		&:before {
+			content: "";
+			display: block;
+			width: 40px;
+			height: 15px;
+			background-image: url('../src/fonts/marker.png');
+			background-size: 100% 100%;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			top: 60px;
+		}
+	}
 }
 
 @media (min-width: 992px) {
 	.title-row {
 		h1,
-		h2,
+		h2 {
+			font-size: calc(30px + 8 * ((100vw - 320px)/ 880));
+			margin-bottom: 60px;
+		}
 		h3,
 		h4 {
-			font-size: calc(35px + 8 * ((100vw - 320px)/ 880));
+			font-size: calc(20px + 8 * ((100vw - 320px)/ 880));
 		}
 	}
 }
@@ -473,10 +551,22 @@ body.loaded {
 	ul {
 		list-style: none;
 		padding: 0;
-		li {
-			a {
-			}
-		}
+	}
+
+	h1,
+	h2,
+	h3 {
+		margin-bottom: 30px;
+	}
+
+	.item {
+		background: #1a1d42;
+		border-bottom: 1px solid #f04043;
+		color: white;
+		list-style: none;
+		padding: 30px;
+		text-align: center;
+		height: 275px;
 	}
 }
 
@@ -493,6 +583,7 @@ body.loaded {
 			font-size: 12px;
 			margin-left: 5px;
 			transition: .5s;
+			color: #fe4242;
 		}
 
 		&:hover {
@@ -881,6 +972,20 @@ $shadows-big:    multiple-box-shadow(100);
 	    box-shadow: $shadows-big;
     }
 }
+
+@keyframes scrollDown {
+	0% {
+		bottom: 11vh;
+	}
+
+	50% {
+		bottom: 10vh;
+	}
+
+	100% {
+		bottom: 11vh;
+	}
+}
   
 @keyframes animStar {
   	from {
@@ -920,16 +1025,16 @@ $shadows-big:    multiple-box-shadow(100);
 
 @keyframes moveTextUp {
 	0% {
-		bottom: 10px;
+		bottom: 175px;
 		opacity: 0;
 	}
 
 	70% {
-		bottom: 45px;
+		bottom: 200px;
 	}
 
 	100% {
-		bottom: 40px;
+		bottom: 175px;
 		opacity: 1;
 	}
 }
