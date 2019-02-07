@@ -7,6 +7,16 @@ jQuery(document).ready(function($){
         });
     }
 
+    // Function: Scrolldown button to 1st div in page
+    if ($(".scroll-down").length) {
+        $('.scroll-down').on('click', function(){
+            console.log('123');
+            $('html,body').animate({
+                scrollTop: $("#row1").offset().top
+            }, 'slow');
+        });
+    }
+
     // Toggle show menu when clicking on the button
     if ($(".menu-toggle").length) {
         $('.menu-toggle').on('click', function(){
