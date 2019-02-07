@@ -15,9 +15,9 @@ jQuery(document).ready(function($){
         });
     }
     
-    if($('#row1').length) {
-        // Function: Fade animation on row1 when in view
-        var row1 = document.getElementById("row1");
+    if($('#diensten').length) {
+        // Function: Fade animation on diensten when in view
+        var row1 = document.getElementById("diensten");
         var elementWatcher = scrollMonitor.create(row1, -100);
         elementWatcher.enterViewport(function() {
             $(row1).addClass('zoomInFadeIn');

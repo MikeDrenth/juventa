@@ -7,9 +7,15 @@
  */
 
 get_header();
+
 $container = get_theme_mod( 'understrap_container_type' );
 ?>
-
+	<div class="scroll-down"><i class="fas fa-caret-down"></i></div>
+	<div class="header-text">
+		<?php the_field('header_tekst'); ?>
+	</div>
+<!-- Close header from header.php -->
+</div> 
 <div class="wrapper" id="homeContent">
 
 	<?php while ( have_posts() ) : the_post(); ?>
