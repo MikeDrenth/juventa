@@ -4008,10 +4008,8 @@ jQuery(document).ready(function($){
         $('.menu-toggle').on('click', function(){
             $(this).toggleClass('active');
             $('.menu-wrapper').toggleClass('show');
-            // Hide scroll down button when on smaller device
-            if($(window).width() < 767) { 
-                $('.scroll-down').toggleClass('hide');
-            }
+            // Hide scroll down button
+            $('.scroll-down').toggleClass('hide');
         });
     }
 
@@ -4028,10 +4026,19 @@ jQuery(document).ready(function($){
     
     if($('#diensten').length) {
         // Function: Fade animation on diensten when in view
-        var row1 = document.getElementById("diensten");
-        var elementWatcher = scrollMonitor.create(row1, -100);
+        var diensten = document.getElementById("diensten");
+        var elementWatcher = scrollMonitor.create(diensten, -100);
         elementWatcher.enterViewport(function() {
-            $(row1).addClass('zoomInFadeIn');
+            $(diensten).addClass('zoomInFadeIn');
+        });
+    }
+
+    if($('#usps').length) {
+        // Function: Fade animation on diensten when in view
+        var usps = document.getElementById("usps");
+        var elementWatcher = scrollMonitor.create(usps, -100);
+        elementWatcher.enterViewport(function() {
+            $(usps).addClass('zoomInFadeIn');
         });
     }
 
@@ -4065,10 +4072,10 @@ jQuery(document).ready(function($){
     }
 
     // Set div to hide the pre-loader after 2sec
-    setTimeout(function(){
-        $('body').addClass('loaded');
-        $('.header-text').addClass('visible');
-    }, 2000);
+    //setTimeout(function(){
+    //    $('body').addClass('loaded');
+    //    $('.header-text').addClass('visible');
+    //}, 2000);
 
     if ($(".items-title .title").length) {
         // Add active to the 1st item to display after loading

@@ -18,24 +18,22 @@
                     <li><a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian</a></li>
                     <li><a href="tel:0625277247"><i class="fas fa-mobile-alt"></i> Mike</a></li>
                     <li><a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> Stuur een e-mail</a></li>
-                    <li><a href="tel:060123456789"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
                 <ul>
             </div>
             <div class="col-12 col-md-4">
-                <h3>Bekijk ook</h3>
+                <h3>Ga gelijk naar</h3>
                 <ul>
-                    <li><a href="">Algemene voorwaarden</a></li> 
-                    <li><a href="">Privacy Policy</a></li>
-                    <li><a href="">Cookies</a></li>
+                    <li><a href="">Website ontwikkeling</a></li> 
+                    <li><a href="">Google Campagnes</a></li>
+                    <li><a href="">Support</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-4">
-                <h3>Contact</h3>
+                <h3>Socials</h3>
                 <ul>
-                    <li><a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian</a></li>
-                    <li><a href="tel:0625277247"><i class="fas fa-mobile-alt"></i> Mike</a></li>
-                    <li><a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> Stuur een e-mail</a></li>
                     <li><a href="tel:060123456789"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
+                    <li><a href="tel:060123456789"><i class="fab fa-instagram"></i> Bekijk ons op Instagram</a></li>
+                    <li><a href="tel:060123456789"><i class="fab fa-linkedin"></i> Bekijk ons op Linkedin</a></li>
                 <ul>
             </div>
         </div>
@@ -45,7 +43,7 @@
             <div class="col-12">
                 <ul>
                     <li>
-                        <a href="sitemap.html">Sitemap</a>
+                        <a href="algemene-voorwaarden">Algemene voorwaarden</a>
                     </li>
                     <li>
                         Copyright &copy; Juventa Online <?php echo date("Y"); ?>

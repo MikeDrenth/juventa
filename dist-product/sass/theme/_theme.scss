@@ -43,7 +43,7 @@ body:not(.home) {
 }
 
 body {
-	background-color: #161a39;
+	background-color: $blue;
   	color: #999999;
   	@include fluid-type($min_width, $max_width, $min_font, $max_font);
 	font-family: 'Oswald';
@@ -153,7 +153,7 @@ body.loaded {
 	align-items: center;
 
 	&.dark-background {
-		background: #161a39;
+		background: $blue;
 		position: fixed;
 		top: 0;
 		left: 0;

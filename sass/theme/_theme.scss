@@ -1,10 +1,4 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=Courgette');
-@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
-@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
-
 $min_width: 320px;
 $max_width: 1200px;
 $min_font: 18px;
@@ -24,29 +18,11 @@ body:not(.home) {
 /* ---- stats.js ---- */ 
 .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
 
-@font-face {
-    font-family: 'Days One';
-    src: url('../src/fonts/DaysOne-Regular.woff2') format('woff2'),
-        url('../src/fonts/DaysOne-Regular.woff') format('woff'),
-        url('../src/fonts/DaysOne-Regular.svg#DaysOne-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Oswald';
-    src: url('../src/fonts/Oswald-Medium.woff2') format('woff2'),
-        url('../src/fonts/Oswald-Medium.woff') format('woff'),
-        url('../src/fonts/Oswald-Medium.svg#Oswald-Medium') format('svg');
-    font-weight: 500;
-    font-style: normal;
-}
-
 body {
-	background-color: #161a39;
+	background-color: $blue;
   	color: #999999;
   	@include fluid-type($min_width, $max_width, $min_font, $max_font);
-	font-family: 'Oswald';
+	font-family: $fontContent;
     line-height: 32px;
 }
 
@@ -56,8 +32,16 @@ h3,
 h4,
 h5 {
 	color: white;
-	font-family: 'Days One';
+	font-family: $fontHeading;
 	font-weight: bold;
+}
+
+a {
+	transition: .5s;
+	&:hover {
+		text-decoration: none;
+		border-bottom: 1px solid white;
+	}
 }
 
 body.loaded {
@@ -96,7 +80,7 @@ body.loaded {
 	  width: 11px;
 	  height: 11px;
 	  border-radius: 50%;
-	  background: #ff4242;
+	  background: $red;
 	  animation-timing-function: cubic-bezier(0, 1, 1, 0);
 	}
 	.lds-ellipsis div:nth-child(1) {
@@ -153,7 +137,7 @@ body.loaded {
 	align-items: center;
 
 	&.dark-background {
-		background: #161a39;
+		background: $blue;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -203,7 +187,7 @@ body.loaded {
 	right: 0;
 	margin: auto;
 	z-index: 500;
-	color: #ff4242;
+	color: $red;
 	font-size: 35px;
 
 	i {
@@ -329,8 +313,10 @@ body.loaded {
 		margin-top: 1rem;
 	}
 
-	&.visible {
-		//animation: moveTextUp 1s;
+	.col-12 {
+		opacity: 0;
+		animation: moveTextUp 1s 1s;
+		animation-fill-mode: forwards;
 	}
 }
 
@@ -365,8 +351,7 @@ body:not(.home) {
 	}
 
 	.header-text {
-		padding-right: 0;
-		width: 70%;
+		padding: 0;
 
 		h1,
 		h2,
@@ -381,13 +366,7 @@ body:not(.home) {
 
 @media (min-width: 992px) {
 	.header-text {
-		width: 60%;
-	}
-}
-
-@media (min-width: 1375px) {
-	.header-text {
-		width: 50%;
+		width: 100%;
 	}
 }
 
@@ -427,7 +406,7 @@ body:not(.home) {
 	}
 
 	&.show {
-		background: #ff4242;
+		background: $red;
 		width: 100%;
 		height: 100vh;
 		z-index: 400;
@@ -505,7 +484,7 @@ body:not(.home) {
 	}
 
 	.info {
-		background: #ff4242;
+		background: $red;
 		border-radius: 10px 10px 0 10px;
 		bottom: 60px;
 		display: flex;
@@ -792,6 +771,15 @@ body:not(.home) {
 			div:nth-child(3) {
 				animation-delay: 1.5s;
 			}
+			div:nth-child(4) {
+				animation-delay: 2s;
+			}
+			div:nth-child(5) {
+				animation-delay: 2.5s;
+			}
+			div:nth-child(6) {
+				animation-delay: 3s;
+			}
 		}
  	}
 }
@@ -824,7 +812,7 @@ body:not(.home) {
 		.items-title {
 			&.startAnimation {
 				div {
-					animation: fadeOpacity 1s 1s forwards;
+					animation: fadeOpacity 1s forwards;
 					transition: .5s;
 				}
 				div:nth-child(1) {
@@ -965,7 +953,14 @@ body:not(.home) {
 	}
 }
 
-#dienstContent {
+body.page-template-clean {
+	#header-background {
+		height: 100px;
+		background: none;
+	}
+}
+
+#pageContent {
 	.dienst-tekst {
 		color: rgba(255,255,255,.8);
 		line-height: 1.5;
@@ -974,13 +969,138 @@ body:not(.home) {
 		text-align: center;
 	}
 
+	#row1 {
+		a {
+			color: $red;
+		}
+	}
+
 	#row2 {
 		padding: 150px 0;
+	}
+
+	.projecten {
+		margin-top: 5rem;
+		margin-bottom: 5rem;
+
+		h2 {
+			margin-bottom: 3rem;
+		}
+
+		.item {
+			align-items: center;
+			align-content: center;
+			display: flex;
+			justify-content: center;
+			overflow: hidden;
+			position: relative;
+
+			.image {
+				position: relative;
+
+				img {
+					transition: transform .5s;
+				}
+
+				&:before {
+					background: #070d3159;
+					bottom: 0;
+					content: "";
+					display: block;
+					left: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+					z-index: 100;
+				}
+			}
+
+			&:hover {
+				.image {
+					img {
+						transform: scale(2);
+					}
+				}
+			}
+
+			.title {
+				position: absolute;
+				z-index: 200;
+
+				a {
+					color: white;
+
+					&:hover {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+
+	.contact-block {
+		background: white;
+		color: $black;
+		font-family: $fontHeading;
+		padding: 100px 35px;
+
+		.extra {
+			margin-top: 5rem;
+			ul {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				list-style: none;
+				padding: 0;
+
+				li {
+					flex: 0 0 50%;
+
+					a {
+						color: $black;
+
+						&:hover {
+							border-color: $red;
+							color: $red;
+						}
+					}
+				}
+			}
+		}
+
+		.form {
+			background: $blue;
+			color: white;
+			padding: 30px;
+
+			button {
+				background: $red;
+				border: none;
+				color: white;
+				font-size: 15px;
+			}
+
+			.wpforms-error {
+				color: $red;
+			}
+		}
+	}
+
+	.usps {
+		margin-top: 100px;
+		.item {
+			height: 200px;
+			margin-bottom: 35px;
+			.icon {
+				font-size: 45px;
+				margin-bottom: 25px;		
+			}
+		}
 	}
 }
 
 @media (min-width: 768px) {
-	#dienstContent {
+	#pageContent {
 		.dienst-tekst {
 			margin-top: 0;
 			padding: 0;
@@ -1019,7 +1139,7 @@ body:not(.home) {
 		color: white;
 
 		&:hover {
-			color: #ff4242;
+			color: $red;
 			text-decoration: none;
 		}
 	}
@@ -1044,79 +1164,6 @@ body:not(.home) {
 	.footer-wrapper {
 		height: 500px;
 	}
-}
-
-// n is number of stars required
-@function multiple-box-shadow ($n) {
-	$value: '#{random(2000)}px #{random(2000)}px #FFF';
-	@for $i from 2 through $n {
-    	$value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
-	}
-	@return unquote($value);
-}
-
-$shadows-small:  multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big:    multiple-box-shadow(100);
-
-#stars,
-#stars2,
-#stars3 {
-	z-index: -1;
-}
-
-#stars {
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: $shadows-small;
-  animation	: animStar 50s linear infinite;
-    
-  &:after {
-    content: " "; 
-    position: absolute;
-    top: 2000px;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-    box-shadow: $shadows-small;
-  }
-}
-
-#stars2 {
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: $shadows-medium;
-  animation	: animStar 100s linear infinite;
-    
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium;
- }
-}
-
-#stars3 {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: $shadows-big;
-  animation	: animStar 150s linear infinite;
-    
-    &:after {
-	    content: " ";
-	    position: absolute;
-	    top: 2000px;
-	    width: 3px;
-	    height: 3px;
-	    background: transparent;
-	    box-shadow: $shadows-big;
-    }
 }
 
 @keyframes scrollDown {
@@ -1171,16 +1218,16 @@ $shadows-big:    multiple-box-shadow(100);
 
 @keyframes moveTextUp {
 	0% {
-		bottom: 175px;
+		padding-top: -25px;
 		opacity: 0;
 	}
 
 	70% {
-		bottom: 200px;
+		padding-top: 20px;
 	}
 
 	100% {
-		bottom: 175px;
+		padding-top: 0;
 		opacity: 1;
 	}
 }

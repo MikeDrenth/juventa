@@ -28,11 +28,11 @@ get_header();
 </div>
 <!-- Close header from header.php -->
 
-<div class="wrapper" id="landingspaginaContent">
+<div class="wrapper" id="pageContent">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php get_template_part( 'loop-templates/content', 'dienst' ); ?>
+		<?php get_template_part( 'loop-templates/content', 'landingspagina' ); ?>
 
 	<?php endwhile; // end of the loop. ?>
 
