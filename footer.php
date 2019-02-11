@@ -12,7 +12,7 @@
 <div id="contact" class="footer-wrapper d-flex flex-column justify-content-center">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-md-4">
                 <h3>Contact</h3>
                 <ul>
                     <li><a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian</a></li>
@@ -21,7 +21,7 @@
                     <li><a href="tel:060123456789"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
                 <ul>
             </div>
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-md-4">
                 <h3>Bekijk ook</h3>
                 <ul>
                     <li><a href="">Algemene voorwaarden</a></li> 
@@ -29,7 +29,7 @@
                     <li><a href="">Cookies</a></li>
                 </ul>
             </div>
-            <div class="col-12 col-sm-4">
+            <div class="col-12 col-md-4">
                 <h3>Contact</h3>
                 <ul>
                     <li><a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian</a></li>

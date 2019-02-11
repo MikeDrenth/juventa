@@ -1,7 +1,7 @@
 
 <?php
 /**
- * Template Name: Dienst detail page
+ * Template Name: Landingspagina
  * Template for displaying a page without sidebar even if a sidebar widget is published.
  *
  * @package understrap
@@ -16,7 +16,7 @@ get_header();
 	<div class="header-text">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-12 col-md-10">
+				<div class="col-12 col-sm-10">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title(); ?></h1>
 						<?php the_content(); ?>
@@ -28,7 +28,7 @@ get_header();
 </div>
 <!-- Close header from header.php -->
 
-<div class="wrapper" id="dienstContent">
+<div class="wrapper" id="landingspaginaContent">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 

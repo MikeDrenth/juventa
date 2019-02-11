@@ -4,13 +4,16 @@ jQuery(document).ready(function($){
     if ($(".contact-info .button").length) {
         $('.contact-info .button').on('click', function(){
             $('.contact-info .info').toggleClass('showMore');
+            // Hide scroll down button when on smaller device
+            if($(window).width() < 767) { 
+                $('.scroll-down').toggleClass('hide');
+            }
         });
     }
 
     // Function: Scrolldown button to 1st div in page
     if ($(".scroll-down").length) {
         $('.scroll-down').on('click', function(){
-            console.log('123');
             $('html,body').animate({
                 scrollTop: $("#row1").offset().top
             }, 'slow');
@@ -22,6 +25,21 @@ jQuery(document).ready(function($){
         $('.menu-toggle').on('click', function(){
             $(this).toggleClass('active');
             $('.menu-wrapper').toggleClass('show');
+            // Hide scroll down button when on smaller device
+            if($(window).width() < 767) { 
+                $('.scroll-down').toggleClass('hide');
+            }
+        });
+    }
+
+    if ($('body').hasClass('home')) {
+        $("#main-menu a").click(function() {
+            var id = $(this).attr('href');
+            var id = id.replace('/','');
+            $('.menu-wrapper').removeClass('show');
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 2000);
         });
     }
     
@@ -50,24 +68,16 @@ jQuery(document).ready(function($){
         elementWatcher.enterViewport(function() {
             $(row3).addClass('startAnimation');
         });
-        // Add dark background to header
-        elementWatcher.fullyEnterViewport(function() {
-            $('.logo-wrapper').addClass('dark-background');
-        });
-        // Remove dark background from header
-        elementWatcher.exitViewport(function() {
-            $('.logo-wrapper').removeClass('dark-background');
-        });
     }
 
     if($('.logo-wrapper').length) {
-        // Function: Add class to logo wrapper div after scrolling 100px
+        // Function: Add class to logo wrapper div after scrolling, mobile only
         if($(window).width() < 991) { 
-        $(window).scroll(function() {
-            if ($(document).scrollTop() > 200) {
-            $('.logo-wrapper').addClass('fixed');
-            }
-        });
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 200) {
+                $('.logo-wrapper').addClass('fixed');
+                }
+            });
         }
     }
 
