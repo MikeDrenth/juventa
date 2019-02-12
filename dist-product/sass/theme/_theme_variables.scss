@@ -1,10 +1,26 @@
-// Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder. 
-// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+@font-face {
+  font-family: 'Days One';
+  src: url('../src/fonts/DaysOne-Regular.woff2') format('woff2'),
+      url('../src/fonts/DaysOne-Regular.woff') format('woff'),
+      url('../src/fonts/DaysOne-Regular.svg#DaysOne-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: 'Oswald';
+  src: url('../src/fonts/Oswald-Medium.woff2') format('woff2'),
+      url('../src/fonts/Oswald-Medium.woff') format('woff'),
+      url('../src/fonts/Oswald-Medium.svg#Oswald-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
 
-$primary: #6f31cd; // Thats a sample how you could change a BootStrap variable.
-
+$fontHeading: 'Days One';
+$fontContent: 'Oswald';
+$blue: #161a39;
+$red: #f54242;
+$black: #070a1b;
 
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);

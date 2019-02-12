@@ -27,7 +27,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <body <?php body_class(); ?>>
 
 <div class="hfeed site" id="page">
-	<div class="loading-wrapper d-flex justify-content-center align-items-center">
+	<!--div class="loading-wrapper d-flex justify-content-center align-items-center">
 		<div class="logo-wrapper d-flex">
 				<div class="brand-title">
 					<?php if ( function_exists( 'the_custom_logo' ) ) {
@@ -40,7 +40,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</div>
 			<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 		</div>
-	</div>
+	</div-->
 	<div class="header-wrapper">
 		<div id="header-background" class="d-flex flex-column justify-content-center align-items-center">
 			<div class="menu-wrapper">

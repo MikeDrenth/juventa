@@ -4,6 +4,19 @@ jQuery(document).ready(function($){
     if ($(".contact-info .button").length) {
         $('.contact-info .button').on('click', function(){
             $('.contact-info .info').toggleClass('showMore');
+            // Hide scroll down button when on smaller device
+            if($(window).width() < 767) { 
+                $('.scroll-down').toggleClass('hide');
+            }
+        });
+    }
+
+    // Function: Scrolldown button to 1st div in page
+    if ($(".scroll-down").length) {
+        $('.scroll-down').on('click', function(){
+            $('html,body').animate({
+                scrollTop: $("#row1").offset().top
+            }, 'slow');
         });
     }
 
@@ -12,15 +25,37 @@ jQuery(document).ready(function($){
         $('.menu-toggle').on('click', function(){
             $(this).toggleClass('active');
             $('.menu-wrapper').toggleClass('show');
+            // Hide scroll down button
+            $('.scroll-down').toggleClass('hide');
+        });
+    }
+
+    if ($('body').hasClass('home')) {
+        $("#main-menu a").click(function() {
+            var id = $(this).attr('href');
+            var id = id.replace('/','');
+            $('.menu-wrapper').removeClass('show');
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 2000);
         });
     }
     
     if($('#diensten').length) {
         // Function: Fade animation on diensten when in view
-        var row1 = document.getElementById("diensten");
-        var elementWatcher = scrollMonitor.create(row1, -100);
+        var diensten = document.getElementById("diensten");
+        var elementWatcher = scrollMonitor.create(diensten, -100);
         elementWatcher.enterViewport(function() {
-            $(row1).addClass('zoomInFadeIn');
+            $(diensten).addClass('zoomInFadeIn');
+        });
+    }
+
+    if($('#usps').length) {
+        // Function: Fade animation on diensten when in view
+        var usps = document.getElementById("usps");
+        var elementWatcher = scrollMonitor.create(usps, -100);
+        elementWatcher.enterViewport(function() {
+            $(usps).addClass('zoomInFadeIn');
         });
     }
 
@@ -40,32 +75,24 @@ jQuery(document).ready(function($){
         elementWatcher.enterViewport(function() {
             $(row3).addClass('startAnimation');
         });
-        // Add dark background to header
-        elementWatcher.fullyEnterViewport(function() {
-            $('.logo-wrapper').addClass('dark-background');
-        });
-        // Remove dark background from header
-        elementWatcher.exitViewport(function() {
-            $('.logo-wrapper').removeClass('dark-background');
-        });
     }
 
     if($('.logo-wrapper').length) {
-        // Function: Add class to logo wrapper div after scrolling 100px
+        // Function: Add class to logo wrapper div after scrolling, mobile only
         if($(window).width() < 991) { 
-        $(window).scroll(function() {
-            if ($(document).scrollTop() > 200) {
-            $('.logo-wrapper').addClass('fixed');
-            }
-        });
+            $(window).scroll(function() {
+                if ($(document).scrollTop() > 200) {
+                $('.logo-wrapper').addClass('fixed');
+                }
+            });
         }
     }
 
     // Set div to hide the pre-loader after 2sec
-    setTimeout(function(){
-        $('body').addClass('loaded');
-        $('.header-text').addClass('visible');
-    }, 2000);
+    //setTimeout(function(){
+    //    $('body').addClass('loaded');
+    //    $('.header-text').addClass('visible');
+    //}, 2000);
 
     if ($(".items-title .title").length) {
         // Add active to the 1st item to display after loading

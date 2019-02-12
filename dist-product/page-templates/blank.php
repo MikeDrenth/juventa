@@ -12,7 +12,13 @@ $container = get_theme_mod( 'understrap_container_type' );
 ?>
 	<div class="scroll-down"><i class="fas fa-caret-down"></i></div>
 	<div class="header-text">
-		<?php the_field('header_tekst'); ?>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-lg-8">
+					<?php the_field('header_tekst'); ?>
+				</div>
+			</div>
+		</div>
 	</div>
 <!-- Close header from header.php -->
 </div> 

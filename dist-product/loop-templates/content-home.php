@@ -22,7 +22,7 @@
 					<div class="row content-row">
 						<?php while ( have_rows('diensten') ) : the_row();  ?>
 							<?php if( get_row_layout() == 'diensten' ): ?>
-								<div class="col-12 col-sm-4">
+								<div class="col-12 col-md-4">
 									<div class="item">
 										<?php the_sub_field('tekst'); ?>
 									</div>
