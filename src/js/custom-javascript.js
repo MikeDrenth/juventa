@@ -53,7 +53,7 @@ jQuery(document).ready(function($){
     if($('#usps').length) {
         // Function: Fade animation on diensten when in view
         var usps = document.getElementById("usps");
-        var elementWatcher = scrollMonitor.create(usps, -100);
+        var elementWatcher = scrollMonitor.create(usps, -90);
         elementWatcher.enterViewport(function() {
             $(usps).addClass('zoomInFadeIn');
         });

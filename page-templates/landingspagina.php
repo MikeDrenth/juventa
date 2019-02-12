@@ -13,6 +13,9 @@ get_header();
 
 	<!-- Adding text in header on page, title + content block -->
 	<div class="scroll-down"><i class="fas fa-caret-down"></i></div>
+	<div class="cta-button">
+		<span>Kom in contact!</span>
+	</div>
 	<div class="header-text">
 		<div class="container">
 			<div class="row justify-content-center">

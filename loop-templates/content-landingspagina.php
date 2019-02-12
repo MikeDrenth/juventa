@@ -98,10 +98,12 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="extra">
-                <?php echo the_field('andere_paginas'); ?>
-            </div>  
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+                <div class="extra">
+                    <?php echo the_field('andere_paginas'); ?>
+                </div>  
+            </div>
         </div>
     </div>
 </div>
