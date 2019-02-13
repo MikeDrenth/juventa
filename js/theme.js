@@ -4003,6 +4003,25 @@ jQuery(document).ready(function($){
         });
     }
 
+    // Function: Scroll cta button down to form in landingspage
+    if ($(".cta-button").length) {
+        $('.cta-button').on('click', function(){
+            $('html, body').animate({
+                scrollTop: $('.form').offset().top
+            }, 2000);
+        });
+
+        // Function: Fade animation on diensten when in view
+        var contactBlock = document.getElementById("contact-wrapper");
+        var elementWatcher = scrollMonitor.create(contactBlock, -90);
+        elementWatcher.enterViewport(function() {
+            $(".cta-button").hide();
+        });
+        elementWatcher.exitViewport(function() {
+            $(".cta-button").show();
+        });
+    }
+
     // Toggle show menu when clicking on the button
     if ($(".menu-toggle").length) {
         $('.menu-toggle').on('click', function(){
