@@ -23,20 +23,20 @@
             </div>
         </div>
         <div class="row">
-            <?php if( have_rows('usps') ): ?>
+            <?php if( have_rows('usps', 112) ): ?>
                 <div id="usps" class="usps fadeAnimation">
                     <div class="container">
                         <div class="row justify-content-center items">
                             <div class="col-12 col-lg-10">
                                 <div class="row content-row">
-                                    <?php while ( have_rows('usps') ) : the_row();  ?>
+                                    <?php while ( have_rows('usps', 112) ) : the_row();  ?>
                                         <?php if( get_row_layout() == 'usp' ): ?>
                                             <div class="col-12 col-md-4">
                                                 <div class="item justify-content-center d-flex flex-column">
                                                     <div class="icon">
-                                                        <?php the_sub_field('icon'); ?>
+                                                        <?php the_sub_field('icon', 112); ?>
                                                     </div>
-                                                    <?php the_sub_field('tekst'); ?>
+                                                    <?php the_sub_field('tekst', 112); ?>
                                                 </div>
                                             </div>
                                         <?php endif; ?>
@@ -70,7 +70,9 @@
                                     $projectImage = get_sub_field('afbeelding'); 
                                 ?>
                                 <div class="image"">
-                                    <img src="<?=$projectImage['url']?>" alt="<?=$titleSlug?>">
+                                    <?php if(!empty($projectImage)) : ?>
+                                        <img src="<?=$projectImage['url']?>" alt="<?=$titleSlug?>">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="title">
                                     <h3><?=$title;?></h3>
@@ -94,7 +96,7 @@
             </div>
             <div class="col-12 col-md-8 col-lg-6">
                 <div class="form">
-                    <?php echo the_field('contact_formulier'); ?>
+                    <?php echo the_field('contact_formulier', 112); ?>
                 </div>
             </div>
         </div>
