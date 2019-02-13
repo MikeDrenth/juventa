@@ -27,11 +27,11 @@
                 <div id="usps" class="usps fadeAnimation">
                     <div class="container">
                         <div class="row justify-content-center items">
-                            <div class="col-12 col-md-10">
+                            <div class="col-12 col-lg-10">
                                 <div class="row content-row">
                                     <?php while ( have_rows('usps') ) : the_row();  ?>
                                         <?php if( get_row_layout() == 'usp' ): ?>
-                                            <div class="col-12 col-md-6 col-lg-6">
+                                            <div class="col-12 col-md-4">
                                                 <div class="item justify-content-center d-flex flex-column">
                                                     <div class="icon">
                                                         <?php the_sub_field('icon'); ?>
@@ -84,7 +84,7 @@
 	</div>
 <?php endif; ?>
 
-<div class="contact-block">
+<div id="contact-wrapper" class="contact-block">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4 col-lg-6">
