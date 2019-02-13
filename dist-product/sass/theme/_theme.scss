@@ -1,30 +1,64 @@
 // This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
 $min_width: 320px;
 $max_width: 1200px;
-$min_font: 18px;
+$min_font: 16px;
 $max_font: 24px;
 
-/* ---- reset ---- */ 
-body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; } 
+body {
+		background-color: $blue;
+  	color: #999999;
+		font-size: 16px;
+		font-family: $fontContent;
+		line-height: 1.5;
+}
+
 /* ---- particles.js container ---- */ 
 body.home {
 	#particles-js{ position:absolute; width: 100%; height: 100%; z-index: 1;} 
 }
+
 body:not(.home) {
 	.particles-js-canvas-el {
 		display: none;
 	}
 }
-/* ---- stats.js ---- */ 
-.count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
 
-body {
-	background-color: $blue;
-  	color: #999999;
-  	@include fluid-type($min_width, $max_width, $min_font, $max_font);
-	font-family: $fontContent;
-    line-height: 32px;
+.count-particles { 
+	background: #000022; 
+	position: absolute; 
+	top: 48px; 
+	left: 0; 
+	width: 80px; 
+	color: #13E8E9; 
+	font-size: .8em; 
+	text-align: left; 
+	text-indent: 4px; 
+	line-height: 14px; 
+	padding-bottom: 2px; 
+	font-family: Helvetica, Arial, sans-serif; 
+	font-weight: bold; 
+} 
+
+.js-count-particles { 
+	font-size: 1.1em; 
+} 
+
+#stats, 
+.count-particles { 
+	-webkit-user-select: none; 
+	margin-top: 5px; 
+	margin-left: 5px; 
+} 
+
+#stats { 
+	border-radius: 3px 3px 0 0; 
+	overflow: hidden; 
+} 
+
+.count-particles { 
+	border-radius: 0 0 3px 3px; 
 }
+
 
 h1,
 h2,
@@ -42,88 +76,6 @@ a {
 		text-decoration: none;
 		border-bottom: 1px solid white;
 	}
-}
-
-body.loaded {
-	.loading-wrapper {
-		opacity: 0;
-		transform: scale(0);
-		transition: opacity 0.3s ease-out;
-		transition: transform 0.4s ease-out;
-	}
-
-	.loader {
-		opacity: 0;
-		transform: scale(0);
-		transition: opacity 0.3s ease-out;
-		transition: transform 0.4s ease-out;
-	}
-}
-
-.loading-wrapper {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: black;
-	z-index: 9997;
-	top: 0;
-
-	.lds-ellipsis {
-	  display: inline-block;
-	  position: relative;
-	  width: 64px;
-	  height: 64px;
-	}
-	.lds-ellipsis div {
-	  position: absolute;
-	  top: 27px;
-	  width: 11px;
-	  height: 11px;
-	  border-radius: 50%;
-	  background: $red;
-	  animation-timing-function: cubic-bezier(0, 1, 1, 0);
-	}
-	.lds-ellipsis div:nth-child(1) {
-	  left: 6px;
-	  animation: lds-ellipsis1 0.6s infinite;
-	}
-	.lds-ellipsis div:nth-child(2) {
-	  left: 6px;
-	  animation: lds-ellipsis2 0.6s infinite;
-	}
-	.lds-ellipsis div:nth-child(3) {
-	  left: 26px;
-	  animation: lds-ellipsis2 0.6s infinite;
-	}
-	.lds-ellipsis div:nth-child(4) {
-	  left: 45px;
-	  animation: lds-ellipsis3 0.6s infinite;
-	}
-	@keyframes lds-ellipsis1 {
-	  0% {
-	    transform: scale(0);
-	  }
-	  100% {
-	    transform: scale(1);
-	  }
-	}
-	@keyframes lds-ellipsis3 {
-	  0% {
-	    transform: scale(1);
-	  }
-	  100% {
-	    transform: scale(0);
-	  }
-	}
-	@keyframes lds-ellipsis2 {
-	  0% {
-	    transform: translate(0, 0);
-	  }
-	  100% {
-	    transform: translate(19px, 0);
-	  }
-	}
-
 }
 
 .logo-wrapper {
@@ -212,10 +164,8 @@ body.loaded {
 		display: none;
 	}
 
-
 	//animation: scrollDown 1s infinite;
 }
-
 
 @media (max-width: 767px) and (orientation: landscape) {
 	.scroll-down {
@@ -226,7 +176,7 @@ body.loaded {
 .navbar {
 	background-color: #FFF !important;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.11);
-  	height: 85px;
+  height: 85px;
 	padding: 0;
 	position: relative;
 
@@ -336,6 +286,12 @@ body:not(.home) {
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
+	body:not(.home) {
+		.header-text {
+			top: 125px;
+		}
+	}
+
 	.header-text {
 		top: 150px;
 		justify-content: unset;
@@ -358,6 +314,7 @@ body:not(.home) {
 	}
 
 	.header-text {
+		font-size: 20px;
 		padding: 0;
 
 		h1,
@@ -534,6 +491,46 @@ body:not(.home) {
 	}
 }
 
+.header-wrapper {
+
+	.cta-button {
+		align-items: center;
+		bottom: 0;
+		background: $red;
+		cursor: pointer;
+		color: white;
+		display: flex;
+		height: 50px;
+		justify-content: center;
+		transition: .5s;
+		position: fixed;
+		right: 0;
+		width: 100%;
+		z-index: 200;
+
+		&:hover {
+			background: $blue;
+		}
+	}
+
+}
+
+@media (min-width: 768px) {
+	.header-wrapper {
+
+		.cta-button {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			width: 150px;
+	
+			&:hover {
+				background: $blue;
+			}
+		}
+	
+	}
+}
 
 #header-background {
 	background-position: center center;
@@ -633,10 +630,13 @@ body:not(.home) {
 		background: #1a1d42;
 		border-bottom: 1px solid #f04043;
 		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 275px;
 		list-style: none;
 		padding: 25px 0;
 		text-align: center;
-		height: 275px;
 	}
 }
 
@@ -698,6 +698,7 @@ body:not(.home) {
 
 	&.light-background {
 		background: white;
+		font-size: 20px;
 
 		h1,
 		h2,
@@ -720,16 +721,16 @@ body:not(.home) {
 			h1,
 			h2,
 			h3 {
-				animation: fadeOpacity 1s 1s forwards;
+				animation: fadeOpacity 1s 0s forwards;
 			}
 
 			h4 {
-				animation: fadeOpacity 1s 1.5s forwards;
+				animation: fadeOpacity 1s .5s forwards;
 				margin-bottom: 3rem;
 			}
 
 			p {
-				animation: fadeOpacity 1s 2s forwards;
+				animation: fadeOpacity 1s 1s forwards;
 			}
 		}
 	}
@@ -748,7 +749,17 @@ body:not(.home) {
 }
 
 #row1 {
-	padding-top: 200px;
+	padding-top: 40px;
+
+	#diensten {
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 768px) {
+	#row1 {
+		padding-top: 200px;
+	}
 }
 
 .fadeAnimation {
@@ -772,25 +783,25 @@ body:not(.home) {
 	
 		.items {
 			div {
-				animation: fadeOpacity 1s 1s forwards;
+				animation: fadeOpacity 1s forwards;
 			}
 			div:nth-child(1) {
-				animation-delay: .5s;
+				animation-delay: 0;
 			}
 			div:nth-child(2) {
-				animation-delay: 1s;
+				animation-delay: .5s;
 			}
 			div:nth-child(3) {
-				animation-delay: 1.5s;
+				animation-delay: 1s;
 			}
 			div:nth-child(4) {
-				animation-delay: 2s;
+				animation-delay: 1.5s;
 			}
 			div:nth-child(5) {
-				animation-delay: 2.5s;
+				animation-delay: 2s;
 			}
 			div:nth-child(6) {
-				animation-delay: 3s;
+				animation-delay: 2.5s;
 			}
 		}
  	}
@@ -989,7 +1000,7 @@ body.page-template-clean {
 	}
 
 	#row2 {
-		padding: 150px 0;
+		padding: 40px 0;
 	}
 
 	.projecten {
@@ -1007,6 +1018,12 @@ body.page-template-clean {
 			justify-content: center;
 			overflow: hidden;
 			position: relative;
+			text-align: center;
+
+			h3,
+			p {
+				margin: 0;
+			}
 
 			.image {
 				position: relative;
@@ -1055,10 +1072,10 @@ body.page-template-clean {
 		background: white;
 		color: $black;
 		font-family: $fontHeading;
-		padding: 100px 35px;
+		padding: 40px 0;
 
 		.extra {
-			margin-top: 5rem;
+			margin-top: 2rem;
 			ul {
 				display: flex;
 				flex-direction: row;
@@ -1067,7 +1084,7 @@ body.page-template-clean {
 				padding: 0;
 
 				li {
-					flex: 0 0 50%;
+					flex: 0 0 100%;
 
 					a {
 						color: $black;
@@ -1100,7 +1117,7 @@ body.page-template-clean {
 	}
 
 	.usps {
-		margin-top: 100px;
+		margin-top: 40px;
 		.item {
 			height: 200px;
 			margin-bottom: 35px;
@@ -1112,12 +1129,40 @@ body.page-template-clean {
 	}
 }
 
+@media (max-width: 767px) {
+	.contact-block {
+		div.wpforms-container-full .wpforms-form .wpforms-one-half, div.wpforms-container-full .wpforms-form .wpforms-three-sixths, div.wpforms-container-full .wpforms-form .wpforms-two-fourths {
+			width: 100%;
+			margin: 0;
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	#pageContent {
+		#row2 {
+			padding: 150px 0;
+		}
+
 		.dienst-tekst {
 			margin-top: 0;
 			padding: 0;
 			text-align: left;
+		}
+
+		.contact-block {
+			padding: 100px 35px;
+			.extra {
+				ul {
+					li {
+						flex: 0 0 50%;
+					}
+				}
+			}
+		}
+
+		.usps {
+			margin-top: 100px;
 		}
 	}
 }
@@ -1145,11 +1190,12 @@ body.page-template-clean {
 	}
 
 	h3 {
-		padding-bottom: 25px;
+		padding-bottom: 15px;
 	}
 
 	a {
 		color: white;
+		font-size: 18px;
 
 		&:hover {
 			border-bottom: none;
@@ -1176,7 +1222,7 @@ body.page-template-clean {
 
 @media (min-width: 992px) {
 	.footer-wrapper {
-		height: 500px;
+		height: 400px;
 	}
 }
 

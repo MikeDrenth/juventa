@@ -33,6 +33,7 @@
                 <ul>
                     <li><a target="_blank" href="https://www.facebook.com/juventaonline"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
                     <li><a target="_blank" href="https://instagram.com/juventaonline"><i class="fab fa-instagram"></i> Bekijk ons op Instagram</a></li>
+                    <li><a target="_blank" href="http://eepurl.com/ghceIn"><i class="far fa-envelope-open"></i> Inschijven voor nieuwsbrief</a></li>
                 <ul>
             </div>
         </div>
@@ -55,8 +56,8 @@
 
 <?php wp_footer(); ?>
 
-<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="//threejs.org/examples/js/libs/stats.min.js"></script>
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/d72148689d410d2799c3de5f3/aa5b07c4296c3178be1ef81f1.js");</script>
-</body>
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+<script src="//threejs.org/examples/js/libs/stats.min.js"></script>
 
+</body>
 </html>

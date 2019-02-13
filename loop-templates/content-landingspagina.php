@@ -31,7 +31,7 @@
                                 <div class="row content-row">
                                     <?php while ( have_rows('usps') ) : the_row();  ?>
                                         <?php if( get_row_layout() == 'usp' ): ?>
-                                            <div class="col-12 col-sm-4">
+                                            <div class="col-12 col-md-6 col-lg-6">
                                                 <div class="item justify-content-center d-flex flex-column">
                                                     <div class="icon">
                                                         <?php the_sub_field('icon'); ?>
@@ -87,19 +87,19 @@
 <div class="contact-block">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-4 col-lg-6">
                 <div class="text">
                     <?php echo the_field('contact'); ?>
                 </div>
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-8 col-lg-6">
                 <div class="form">
                     <?php echo the_field('contact_formulier'); ?>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
+            <div class="col-12 col-lg-10">
                 <div class="extra">
                     <?php echo the_field('andere_paginas'); ?>
                 </div>  
@@ -121,7 +121,7 @@
                     <div class="row content-row">
                         <?php while ( have_rows('diensten', 12) ) : the_row();  ?>
                             <?php if( get_row_layout() == 'diensten' ): ?>
-                                <div class="col-12 col-sm-4">
+                                <div class="col-12 col-lg-4">
                                     <div class="item">
                                         <?php the_sub_field('tekst', 12); ?>
                                     </div>

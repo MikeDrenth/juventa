@@ -15,25 +15,25 @@
             <div class="col-12 col-md-4">
                 <h3>Contact</h3>
                 <ul>
-                    <li><a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian</a></li>
-                    <li><a href="tel:0625277247"><i class="fas fa-mobile-alt"></i> Mike</a></li>
-                    <li><a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> Stuur een e-mail</a></li>
+                    <li><a href="tel:0621835709"><i class="fas fa-mobile-alt"></i> Fabian: 06 218 357 09</a></li>
+                    <li><a href="tel:0625277248"><i class="fas fa-mobile-alt"></i> Mike: 06 252 772 48</a></li>
+                    <li><a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> info@juventaonline.nl</a></li>
                 <ul>
             </div>
             <div class="col-12 col-md-4">
                 <h3>Ga gelijk naar</h3>
                 <ul>
-                    <li><a href="">Website ontwikkeling</a></li> 
-                    <li><a href="">Google Campagnes</a></li>
-                    <li><a href="">Support</a></li>
+                    <li><a href="">Websites</a></li> 
+                    <li><a href="">Campagnes</a></li>
+                    <li><a href="">Beheer</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-4">
                 <h3>Socials</h3>
                 <ul>
-                    <li><a href="tel:060123456789"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
-                    <li><a href="tel:060123456789"><i class="fab fa-instagram"></i> Bekijk ons op Instagram</a></li>
-                    <li><a href="tel:060123456789"><i class="fab fa-linkedin"></i> Bekijk ons op Linkedin</a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/juventaonline"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
+                    <li><a target="_blank" href="https://instagram.com/juventaonline"><i class="fab fa-instagram"></i> Bekijk ons op Instagram</a></li>
+                    <li><a target="_blank" href="http://eepurl.com/ghceIn"><i class="far fa-envelope-open"></i> Inschijven voor nieuwsbrief</a></li>
                 <ul>
             </div>
         </div>
@@ -43,7 +43,7 @@
             <div class="col-12">
                 <ul>
                     <li>
-                        <a href="algemene-voorwaarden">Algemene voorwaarden</a>
+                        <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
                     </li>
                     <li>
                         Copyright &copy; Juventa Online <?php echo date("Y"); ?>
@@ -56,8 +56,8 @@
 
 <?php wp_footer(); ?>
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+<script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+<script src="//threejs.org/examples/js/libs/stats.min.js"></script>
 
 </body>
-
 </html>

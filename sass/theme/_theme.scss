@@ -286,6 +286,12 @@ body:not(.home) {
 }
 
 @media (max-width: 767px) and (orientation: landscape) {
+	body:not(.home) {
+		.header-text {
+			top: 125px;
+		}
+	}
+
 	.header-text {
 		top: 150px;
 		justify-content: unset;
@@ -497,10 +503,9 @@ body:not(.home) {
 		height: 50px;
 		justify-content: center;
 		transition: .5s;
-		position: absolute;
+		position: fixed;
 		right: 0;
-		top: 50%;
-		width: 150px;
+		width: 100%;
 		z-index: 200;
 
 		&:hover {
@@ -508,6 +513,23 @@ body:not(.home) {
 		}
 	}
 
+}
+
+@media (min-width: 768px) {
+	.header-wrapper {
+
+		.cta-button {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			width: 150px;
+	
+			&:hover {
+				background: $blue;
+			}
+		}
+	
+	}
 }
 
 #header-background {
@@ -699,16 +721,16 @@ body:not(.home) {
 			h1,
 			h2,
 			h3 {
-				animation: fadeOpacity 1s 1s forwards;
+				animation: fadeOpacity 1s 0s forwards;
 			}
 
 			h4 {
-				animation: fadeOpacity 1s 1.5s forwards;
+				animation: fadeOpacity 1s .5s forwards;
 				margin-bottom: 3rem;
 			}
 
 			p {
-				animation: fadeOpacity 1s 2s forwards;
+				animation: fadeOpacity 1s 1s forwards;
 			}
 		}
 	}
@@ -727,10 +749,16 @@ body:not(.home) {
 }
 
 #row1 {
-	padding-top: 200px;
+	padding-top: 40px;
 
 	#diensten {
 		font-size: 20px;
+	}
+}
+
+@media (min-width: 768px) {
+	#row1 {
+		padding-top: 200px;
 	}
 }
 
@@ -972,7 +1000,7 @@ body.page-template-clean {
 	}
 
 	#row2 {
-		padding: 150px 0;
+		padding: 40px 0;
 	}
 
 	.projecten {
@@ -990,6 +1018,12 @@ body.page-template-clean {
 			justify-content: center;
 			overflow: hidden;
 			position: relative;
+			text-align: center;
+
+			h3,
+			p {
+				margin: 0;
+			}
 
 			.image {
 				position: relative;
@@ -1038,10 +1072,10 @@ body.page-template-clean {
 		background: white;
 		color: $black;
 		font-family: $fontHeading;
-		padding: 100px 35px;
+		padding: 40px 0;
 
 		.extra {
-			margin-top: 5rem;
+			margin-top: 2rem;
 			ul {
 				display: flex;
 				flex-direction: row;
@@ -1050,7 +1084,7 @@ body.page-template-clean {
 				padding: 0;
 
 				li {
-					flex: 0 0 50%;
+					flex: 0 0 100%;
 
 					a {
 						color: $black;
@@ -1083,7 +1117,7 @@ body.page-template-clean {
 	}
 
 	.usps {
-		margin-top: 100px;
+		margin-top: 40px;
 		.item {
 			height: 200px;
 			margin-bottom: 35px;
@@ -1095,12 +1129,40 @@ body.page-template-clean {
 	}
 }
 
+@media (max-width: 767px) {
+	.contact-block {
+		div.wpforms-container-full .wpforms-form .wpforms-one-half, div.wpforms-container-full .wpforms-form .wpforms-three-sixths, div.wpforms-container-full .wpforms-form .wpforms-two-fourths {
+			width: 100%;
+			margin: 0;
+		}
+	}
+}
+
 @media (min-width: 768px) {
 	#pageContent {
+		#row2 {
+			padding: 150px 0;
+		}
+
 		.dienst-tekst {
 			margin-top: 0;
 			padding: 0;
 			text-align: left;
+		}
+
+		.contact-block {
+			padding: 100px 35px;
+			.extra {
+				ul {
+					li {
+						flex: 0 0 50%;
+					}
+				}
+			}
+		}
+
+		.usps {
+			margin-top: 100px;
 		}
 	}
 }
