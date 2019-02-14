@@ -362,6 +362,7 @@ body:not(.home) {
 
 				&:hover {
 					a {
+						border-bottom: none;
 						color: black;
 					}
 				}
@@ -977,6 +978,7 @@ body:not(.home) {
 	}
 }
 
+body.error404,
 body.page-template-clean {
 	#header-background {
 		height: 100px;
