@@ -142,9 +142,8 @@ gulp.task( 'scripts', function() {
         paths.dev + '/js/bootstrap4/bootstrap.js',
 
         // End - All BS4 stuff
-
-        paths.dev + '/js/skip-link-focus-fix.js',
-        paths.dev + '/js/lightslider.min.js',
+        //paths.dev + '/js/skip-link-focus-fix.js',
+        //paths.dev + '/js/lightslider.min.js',
 
         // Adding currently empty javascript file to add on for your own themes´ customizations
         // Please add any customizations to this .js file only!

@@ -63,7 +63,7 @@
 							$titleSlug = sanitize_title($title);
 						?>
 						<div class="image" data-id="<?=$titleSlug?>">
-							<img src="<?=$projectImage['url']?>" alt="<?=$titleSlug?>">
+							<img data-src="<?=$projectImage['url']?>" class="lazy" alt="<?=$titleSlug?>">
 							<div class="title d-md-none" data-id="<?=$titleSlug?>">
 								<h3><?=$title;?></h3>
 							</div>

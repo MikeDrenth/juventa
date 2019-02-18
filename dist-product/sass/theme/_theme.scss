@@ -6,7 +6,7 @@ $max_font: 24px;
 
 body {
 		background-color: $blue;
-  	color: #999999;
+  	color: white;
 		font-size: 16px;
 		font-family: $fontContent;
 		line-height: 1.5;
@@ -104,7 +104,7 @@ a {
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 500;
+		z-index: 800;
 	}
 
 	img {
@@ -233,12 +233,6 @@ a {
 	}
 }
 
-@media (min-width: 600px) {
-	.brand-title {
-		margin-bottom: -15px;
-	}
-}
-
 .header-text {
 	align-content: center;
 	align-items: center;
@@ -362,6 +356,7 @@ body:not(.home) {
 
 				&:hover {
 					a {
+						border-bottom: none;
 						color: black;
 					}
 				}
@@ -402,6 +397,7 @@ body:not(.home) {
 	z-index: 600;
 	transition: 0.5s;
 	align-items: center;
+	z-index: 200;
 
 	.line {
 		background: white;
@@ -977,6 +973,7 @@ body:not(.home) {
 	}
 }
 
+body.error404,
 body.page-template-clean {
 	#header-background {
 		height: 100px;

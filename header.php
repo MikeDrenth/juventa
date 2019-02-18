@@ -25,7 +25,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 </head>
 
 <body <?php body_class(); ?>>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8BJ4FH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="hfeed site" id="page">
 	<div class="header-wrapper">
 		<div id="header-background" class="d-flex flex-column justify-content-center align-items-center">

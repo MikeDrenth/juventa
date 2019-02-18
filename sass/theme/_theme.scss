@@ -6,7 +6,7 @@ $max_font: 24px;
 
 body {
 		background-color: $blue;
-  	color: #999999;
+  	color: white;
 		font-size: 16px;
 		font-family: $fontContent;
 		line-height: 1.5;
@@ -104,7 +104,7 @@ a {
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 500;
+		z-index: 800;
 	}
 
 	img {
@@ -230,12 +230,6 @@ a {
 		color: #FFF;
 		font-size: 35px;
 		line-height: 2.5rem;
-	}
-}
-
-@media (min-width: 600px) {
-	.brand-title {
-		margin-bottom: -15px;
 	}
 }
 
@@ -403,6 +397,7 @@ body:not(.home) {
 	z-index: 600;
 	transition: 0.5s;
 	align-items: center;
+	z-index: 200;
 
 	.line {
 		background: white;

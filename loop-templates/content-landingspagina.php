@@ -13,7 +13,7 @@
                     <?php
                         $image = get_field('afbeelding');
                     ?>
-                    <img src="<?=$image['url']?>" alt="<?=the_title();?>">
+                    <img data-src="<?=$image['url']?>" alt="<?=the_title();?>" class="lazy">
                 </div>
             </div>
             <div class="col-12 col-sm-7">
@@ -71,7 +71,7 @@
                                 ?>
                                 <div class="image"">
                                     <?php if(!empty($projectImage)) : ?>
-                                        <img src="<?=$projectImage['url']?>" alt="<?=$titleSlug?>">
+                                        <img data-src="<?=$projectImage['url']?>" alt="<?=$titleSlug?>" class="lazy">
                                     <?php endif; ?>
                                 </div>
                                 <div class="title">

@@ -18,7 +18,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
-	<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -26,22 +25,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 </head>
 
 <body <?php body_class(); ?>>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8BJ4FH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="hfeed site" id="page">
-	<!--div class="loading-wrapper d-flex justify-content-center align-items-center">
-		<div class="logo-wrapper d-flex">
-				<div class="brand-title">
-					<?php if ( function_exists( 'the_custom_logo' ) ) {
-						the_custom_logo();
-					} ?>
-				</div>
-				<div class="menu-toggle">
-					<div class="line"></div>
-				</div>
-			</div>
-			<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-		</div>
-	</div-->
 	<div class="header-wrapper">
 		<div id="header-background" class="d-flex flex-column justify-content-center align-items-center">
 			<div class="menu-wrapper">

@@ -101,17 +101,11 @@ jQuery(document).ready(function($){
         if($(window).width() < 991) { 
             $(window).scroll(function() {
                 if ($(document).scrollTop() > 200) {
-                $('.logo-wrapper').addClass('fixed');
+                //$('.logo-wrapper').addClass('fixed');
                 }
             });
         }
     }
-
-    // Set div to hide the pre-loader after 2sec
-    //setTimeout(function(){
-    //    $('body').addClass('loaded');
-    //    $('.header-text').addClass('visible');
-    //}, 2000);
 
     if ($(".items-title .title").length) {
         // Add active to the 1st item to display after loading
@@ -126,7 +120,33 @@ jQuery(document).ready(function($){
         $('.items-image .image[data-id = '+dataAttr+']').addClass('active');
         });
     }
-    
+
+    $(function() {
+        var prevScroll = $(document).scrollTop();
+        $(window).scroll(function() {
+            var newScroll = $(document).scrollTop();
+            // Remove fixed when scrolling up
+            if(newScroll < prevScroll) {
+                $('.logo-wrapper').addClass('fixed');
+            } else {
+                $('.logo-wrapper').removeClass('fixed');
+            }
+
+            // Remove fixed when we are at the top again
+            if (prevScroll < 10) {
+                $('.logo-wrapper').removeClass('fixed');
+            }
+            prevScroll = newScroll;
+        });
+    });
+
+    $(window).load(function() {
+        // Function: Lazy load images after page load
+        $('img.lazy').each(function() {
+            $(this).attr('src', $(this).attr('data-src'));
+        }); 
+    });    
+
     // Funaction: Add particles in header
     particlesJS(
         "particles-js", 
