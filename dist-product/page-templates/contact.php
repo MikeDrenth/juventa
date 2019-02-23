@@ -1,7 +1,7 @@
 
 <?php
 /**
- * Template Name: Landingspagina
+ * Template Name: Contact template
  * Template for displaying a page without sidebar even if a sidebar widget is published.
  *
  * @package understrap
@@ -13,13 +13,10 @@ get_header();
 
 	<!-- Adding text in header on page, title + content block -->
 	<div class="scroll-down"><i class="fas fa-caret-down"></i></div>
-	<div class="cta-button">
-		<span>Kom in contact!</span>
-	</div>
 	<div class="header-text">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-12 col-md-10">
+				<div class="col-12 col-lg-8">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title(); ?></h1>
 						<?php the_content(); ?>
@@ -31,11 +28,11 @@ get_header();
 </div>
 <!-- Close header from header.php -->
 
-<div class="wrapper" id="pageContent">
+<div class="wrapper" id="contactContent">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php get_template_part( 'loop-templates/content', 'landingspagina' ); ?>
+		<?php get_template_part( 'loop-templates/content', 'contact' ); ?>
 
 	<?php endwhile; // end of the loop. ?>
 

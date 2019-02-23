@@ -59,7 +59,6 @@ body:not(.home) {
 	border-radius: 0 0 3px 3px; 
 }
 
-
 h1,
 h2,
 h3,
@@ -488,6 +487,7 @@ body:not(.home) {
 }
 
 .header-wrapper {
+	position: relative;
 
 	.cta-button {
 		align-items: center;
@@ -979,6 +979,24 @@ body.page-template-clean {
 		height: 100px;
 		background: none;
 	}
+}
+
+body.page-template-contact {
+	#header-background {
+		height: 500px;
+	}
+
+	.header-text {
+		bottom: unset;
+		height: 300px;
+		position: absolute;
+		top: 25%;
+	}
+
+	.scroll-down {
+		bottom: 25px;
+	}
+
 }
 
 #pageContent {

@@ -13,28 +13,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4">
-                <h3>Contact</h3>
-                <ul>
-                    <li><a href="tel:0621835709"><i class="fas fa-mobile-alt"></i> Fabian: 06 218 357 09</a></li>
-                    <li><a href="tel:0625277248"><i class="fas fa-mobile-alt"></i> Mike: 06 252 772 48</a></li>
-                    <li><a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> info@juventaonline.nl</a></li>
-                <ul>
+                <?php dynamic_sidebar( 'footer-bottom-links' ); ?>
             </div>
             <div class="col-12 col-md-4">
-                <h3>Ga gelijk naar</h3>
-                <ul>
-                    <li><a href="">Websites</a></li> 
-                    <li><a href="">Campagnes</a></li>
-                    <li><a href="">Beheer</a></li>
-                </ul>
+                <?php dynamic_sidebar( 'footer-bottom-center' ); ?>
             </div>
             <div class="col-12 col-md-4">
-                <h3>Socials</h3>
-                <ul>
-                    <li><a target="_blank" href="https://www.facebook.com/juventaonline"><i class="fab fa-facebook-f"></i> Bekijk ons op Facebook</a></li>
-                    <li><a target="_blank" href="https://instagram.com/juventaonline"><i class="fab fa-instagram"></i> Bekijk ons op Instagram</a></li>
-                    <li><a target="_blank" href="http://eepurl.com/ghceIn"><i class="far fa-envelope-open"></i> Inschijven voor nieuwsbrief</a></li>
-                <ul>
+                <?php dynamic_sidebar( 'footer-bottom-right' ); ?>
             </div>
         </div>
     </div>
