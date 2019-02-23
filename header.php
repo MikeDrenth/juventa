@@ -68,8 +68,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="button d-flex justify-content-center align-items-center"><i class="fas fa-mobile-alt"></i></div>
 				<div class="info">
 					<a href="mailto:info@juventaonline.nl"><i class="fas fa-at"></i> info@juventaonline.nl</a>
-					<a href="tel:060123456789"><i class="fas fa-mobile-alt"></i> Fabian: 06 321 542 67</a>
-					<a href="tel:0625277247"><i class="fas fa-mobile-alt"></i> Mike: 06 252 772 47</a>
+					<a href="tel:0621835709"><i class="fas fa-mobile-alt"></i> Fabian: 06 218 357 09</a>
+					<a href="tel:0625277248"><i class="fas fa-mobile-alt"></i> Mike: 06 252 772 48</a>
 					<a target="_blank" href="https://www.facebook.com/juventaonline/"><i class="fab fa-facebook-f"></i> Facebook</a>
 				</div>
 			</div>
