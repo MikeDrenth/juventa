@@ -1000,6 +1000,10 @@ body.page-template-contact {
 }
 
 #pageContent {
+	.dienst {
+		padding: 3rem 0;
+	}
+
 	.dienst-tekst {
 		color: rgba(255,255,255,.8);
 		line-height: 1.5;
@@ -1211,6 +1215,10 @@ body.page-template-contact {
 	z-index: 400;
 	text-align: center;
 
+	.mapboxgl-canvas {
+		left: 0;
+	}
+
 	> div:nth-child(1) {
 		> div {
 			> div {
@@ -1256,7 +1264,7 @@ body.page-template-contact {
 
 @media (min-width: 992px) {
 	.footer-wrapper {
-		height: 400px;
+		height: 750px;
 	}
 }
 
