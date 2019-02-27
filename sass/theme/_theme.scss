@@ -1008,6 +1008,10 @@ body.page-template-contact {
 		text-align: center;
 	}
 
+	.dienst-image {
+		text-align: center;
+	}
+
 	#row1 {
 		a {
 			color: $red;
@@ -1149,6 +1153,21 @@ body.page-template-contact {
 		div.wpforms-container-full .wpforms-form .wpforms-one-half, div.wpforms-container-full .wpforms-form .wpforms-three-sixths, div.wpforms-container-full .wpforms-form .wpforms-two-fourths {
 			width: 100%;
 			margin: 0;
+		}
+	}
+}
+
+@media (min-width: 575px) {
+	#pageContent {
+		.dienst {
+			&:nth-child(even) {
+				> div:nth-child(1) {
+					order: 2;
+				}
+				.dienst-tekst {
+					text-align: right;
+				}
+			}
 		}
 	}
 }

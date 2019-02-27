@@ -7,21 +7,24 @@
 
 <div id="row1">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-sm-5">
-                <div class="dienst-image">
-                    <?php
-                        $image = get_field('afbeelding');
-                    ?>
-                    <img src="<?=$image['url']?>" alt="<?=the_title();?>">
-                </div>
-            </div>
-            <div class="col-12 col-sm-7">
-                <div class="dienst-tekst">
-                    <?=get_field('omschrijving');?>
-                </div>
-            </div>
-        </div>
+        <?php if( have_rows('diensten_block') ): ?>
+            <?php while ( have_rows('diensten_block') ) : the_row();  ?>
+                <?php if( get_row_layout() == 'dienst' ): ?>
+                    <div class="row align-items-center dienst">
+                        <div class="col-12 col-sm-5">
+                            <div class="dienst-image">
+                                <?=get_sub_field('icon');?>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-7">
+                            <div class="dienst-tekst">
+                                <?=get_sub_field('tekst');?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 </div>
 
