@@ -73,5 +73,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					<a target="_blank" href="https://www.facebook.com/juventaonline/"><i class="fab fa-facebook-f"></i> Facebook</a>
 				</div>
 			</div>
-			<div id="particles-js"></div> 
 		</div>

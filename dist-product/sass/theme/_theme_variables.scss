@@ -5,7 +5,7 @@
       url('../src/fonts/DaysOne-Regular.svg#DaysOne-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
-  font-display: fallback;
+  font-display: auto;
 }
 
 @font-face {
@@ -15,7 +15,7 @@
       url('../src/fonts/Oswald-Medium.svg#Oswald-Medium') format('svg');
   font-weight: 500;
   font-style: normal;
-  font-display: fallback;
+  font-display: auto;
 }
 
 $fontHeading: 'Days One';
