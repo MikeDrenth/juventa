@@ -272,18 +272,18 @@ body.home {
 			position: relative;
 
 			&:before {
-				background: #FFF;
-				content: "";
-				display: block;
-				position: absolute;
-				left: 0;
-				top: 95px;
-				animation: blinkLine;
-				animation-duration: 2s;
-				animation-delay: 1s;
-				width: 100%;
-				height: 3px;
-				animation-fill-mode: both;
+				// background: #FFF;
+				// content: "";
+				// display: block;
+				// position: absolute;
+				// left: 0;
+				// top: 95px;
+				// animation: blinkLine;
+				// animation-duration: 2s;
+				// animation-delay: 1s;
+				// width: 100%;
+				// height: 3px;
+				// animation-fill-mode: both;
 			}
 		}
 
@@ -506,7 +506,7 @@ body:not(.home) {
 	.info {
 		background: $red;
 		border-radius: 10px 10px 0 10px;
-		bottom: 60px;
+		bottom: 30px;
 		display: flex;
 		flex-direction: column;
 		right: 30px;
@@ -518,6 +518,7 @@ body:not(.home) {
 		transition: all 0.3s ease-out;
 		visibility: hidden;
 		width: 270px;
+		z-index: -1;
 
 		a {
 			color: white;
@@ -540,8 +541,6 @@ body:not(.home) {
 @media (min-width: 768px) {
 	.contact-info {
 		.info {
-			bottom: 50px;
-			right: 50px;
 			width: 350px;
 		}
 	}
@@ -617,6 +616,10 @@ body:not(.home) {
 .wrapper {
 	padding: 0;
 	position: relative;
+
+	a {
+		color: $red;
+	}
 }
 
 
@@ -690,7 +693,7 @@ body:not(.home) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		height: 275px;
+		height: 325px;
 		list-style: none;
 		padding: 25px 0;
 		text-align: center;
@@ -701,51 +704,55 @@ body:not(.home) {
 	.content-row {
 		.item {
 			padding: 30px 10px;
+
+			justify-content: flex-start;
 		}
 	}
 }
 
 #diensten {
 	a {
+		border: 1px solid $red;
 		color: inherit;
+		font-size: 11px;
+		line-height: 32px;
 		position: relative;
-		transition: .5s;
+		padding: 3px 25px 5px 25px;
 
 		&:after {
-			content: "\f101";
-			color: $red;
-			display: inline-block;
-			font-family: "Font Awesome 5 Free";
-			font-weight: 900;
-			font-size: 12px;
-			margin-left: 5px;
+			bottom: 0;
+			background: $red;
+			content: "";
+			left: 0;
 			position: absolute;
-			top: 15px;
-			transition: .5s;
+			right: 0;
+			top: 0;
+			transform: scaleX(0);
+			transform-origin: 50%;
+			transition-property: transform;
+			transition-duration: 0.3s;
+			z-index: -1;
 		}
 
 		&:hover {
-			border-bottom: none;
-			color: $red;
-			font-weight: bold;
-			text-decoration: none;
-
+			background: $red;
 
 			&:after {
-				animation: arrowRight .5s;
-				margin-left: 10px;
+				transform: scaleX(1);
 			}
 		}
 	}
 }
 
-@keyframes arrowRight {
-	from {
-		margin-left: 5px;
+@keyframes hoverButton {
+	0% {
+		
+		opacity: 0;
 	}
 
-	to {
-		margin-left: 10px;
+	100% {
+		transform: scaleX(25);
+		opacity: 1;
 	}
 }
 
@@ -815,7 +822,7 @@ body:not(.home) {
 
 @media (min-width: 768px) {
 	#row1 {
-		padding-top: 200px;
+		padding-top: 100px;
 	}
 }
 

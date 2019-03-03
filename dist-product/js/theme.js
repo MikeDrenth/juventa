@@ -3947,7 +3947,7 @@ jQuery(document).ready(function($){
 
     // Show the contact info after clicking the button
     if ($(".contact-info .button").length) {
-        $('.contact-info .button').on('click', function(){
+        $('.contact-info .button, .contact-info .info').on('hover', function(){
             $('.contact-info .info').toggleClass('showMore');
             // Hide scroll down button when on smaller device
             if($(window).width() < 767) { 

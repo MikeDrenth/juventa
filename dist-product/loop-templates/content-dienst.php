@@ -45,7 +45,7 @@
                     <div class="row content-row justify-content-center">
                         <?php while ( have_rows('overige_diensten') ) : the_row();  ?>
                             <?php if( get_row_layout() == 'dienst' ): ?>
-                                <div class="col-12 col-sm-4">
+                                <div class="col-12 col-sm-6 col-md-6">
                                     <div class="item">
                                         <?php the_sub_field('omschrijving'); ?>
                                     </div>
