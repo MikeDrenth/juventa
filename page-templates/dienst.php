@@ -28,7 +28,7 @@ get_header();
 </div>
 <!-- Close header from header.php -->
 
-<div class="wrapper" id="pageContent">
+<div class="wrapper diensten" id="pageContent">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 

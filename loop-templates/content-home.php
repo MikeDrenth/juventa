@@ -20,15 +20,17 @@
 			<div class="row justify-content-center items">
 				<div class="col-12">
 					<div class="row content-row">
-						<?php while ( have_rows('diensten') ) : the_row();  ?>
-							<?php if( get_row_layout() == 'diensten' ): ?>
-								<div class="col-12 col-lg-4">
-									<div class="item">
-										<?php the_sub_field('tekst'); ?>
-									</div>
-								</div>
-							<?php endif; ?>
-						<?php endwhile;?>
+						<div class="col-12 col-lg-12">
+							<div class="d-flex justify-content-center flex-column flex-lg-row">
+								<?php while ( have_rows('diensten') ) : the_row();  ?>
+									<?php if( get_row_layout() == 'diensten' ): ?>
+										<div class="item">
+											<?php the_sub_field('tekst'); ?>
+										</div>
+									<?php endif; ?>
+								<?php endwhile;?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

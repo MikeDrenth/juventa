@@ -7,41 +7,46 @@
 
 <div id="row1">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-10">
-                <div class="">
-                    <?php echo the_field('eerste_blok'); ?>
+        <div class="row align-items-center">
+            <div class="col-12 col-sm-5">
+                <div class="dienst-image">
+                    <?php
+                        $image = get_field('afbeelding');
+                    ?>
+                    <img src="<?=$image['url']?>" alt="<?=the_title();?>">
+                </div>
+            </div>
+            <div class="col-12 col-sm-7">
+                <div class="dienst-tekst">
+                    <?=get_field('omschrijving');?>
                 </div>
             </div>
         </div>
-        <?php if( have_rows('usps', 112) ): ?>
-            <div id="usps" class="usps fadeAnimation">
-                <div class="row justify-content-center items">
-                    <div class="col-12 col-lg-10">
-                        <div class="row content-row">
-                            <?php while ( have_rows('usps', 112) ) : the_row();  ?>
-                                <?php if( get_row_layout() == 'usp' ): ?>
-                                    <div class="col-12 col-md-4">
-                                        <div class="item justify-content-center d-flex flex-column">
-                                            <div class="icon">
-                                                <?php the_sub_field('icon', 112); ?>
+        <div class="row">
+            <?php if( have_rows('usps', 112) ): ?>
+                <div id="usps" class="usps fadeAnimation">
+                    <div class="container">
+                        <div class="row justify-content-center items">
+                            <div class="col-12 col-lg-10">
+                                <div class="row content-row">
+                                    <?php while ( have_rows('usps', 112) ) : the_row();  ?>
+                                        <?php if( get_row_layout() == 'usp' ): ?>
+                                            <div class="col-12 col-md-4">
+                                                <div class="item justify-content-center d-flex flex-column">
+                                                    <div class="icon">
+                                                        <?php the_sub_field('icon', 112); ?>
+                                                    </div>
+                                                    <?php the_sub_field('tekst', 112); ?>
+                                                </div>
                                             </div>
-                                            <?php the_sub_field('tekst', 112); ?>
-                                        </div>
-                                    </div>
-                                <?php endif; ?>
-                            <?php endwhile;?>
+                                        <?php endif; ?>
+                                    <?php endwhile;?>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <?php endif; ?>
-        <div class="row align-items-center padding-bottom">
-            <div class="col-12 col-lg-10">
-                <div class="">
-                    <?=get_field('tweede_blok');?>
-                </div>
-            </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
@@ -116,15 +121,17 @@
             <div class="row justify-content-center items">
                 <div class="col-12">
                     <div class="row content-row">
-                        <?php while ( have_rows('diensten', 12) ) : the_row();  ?>
-                            <?php if( get_row_layout() == 'diensten' ): ?>
-                                <div class="col-12 col-lg-4">
-                                    <div class="item">
-                                        <?php the_sub_field('tekst', 12); ?>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                        <?php endwhile;?>
+                        <div class="col-12 col-lg-12">
+                            <div class="d-flex justify-content-center flex-column flex-lg-row">
+                                <?php while ( have_rows('diensten', 12) ) : the_row();  ?>
+                                    <?php if( get_row_layout() == 'diensten' ): ?>
+                                        <div class="item">
+                                            <?php the_sub_field('tekst', 12); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endwhile;?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

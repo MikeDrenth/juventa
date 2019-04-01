@@ -708,38 +708,86 @@ body:not(.home) {
 	h1,
 	h2,
 	h3 {
+		color: #495057;
 		margin-bottom: 30px;
 	}
 
 	.item {
-		background: #1a1d42;
-		border-bottom: 1px solid #f04043;
-		color: white;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		height: 325px;
+		background: #f8f9fa;
+		box-shadow: 0px 1px 20px 3px #0000008c;
+		border-radius: 25px;
+		color: #495057;
+		flex: 0 0 33%;
+		height: 450px;
 		list-style: none;
 		padding: 25px 0;
 		text-align: center;
+
+		.icon {
+			color: $red;
+		}
+
+		&:nth-child(1) {
+			position: relative;
+			top: 50px;
+			z-index: 4;
+		}
+
+		&:nth-child(2) {
+			z-index: 5;
+		}
+
+		&:nth-child(3) {
+			 position: relative;
+			 top: -40px;
+			 z-index: 4;
+		}
+
+		img {
+			max-height: 100px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.content-row {
+		.item {
+			&:nth-child(3) {
+				 padding-top: 60px;
+			}
+		}
 	}
 }
 
 @media (min-width: 992px) {
 	.content-row {
 		.item {
-			padding: 30px 10px;
+			padding: 30px 0;
+			justify-content: normal;
 
-			justify-content: flex-start;
+			&:nth-child(1) {
+				left: 30px;
+			}
+	
+			&:nth-child(3) {
+				 right: 30px;
+				 top: 50px;
+				 padding-top: 30px;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.content-row {
+		.item {
+			padding: 30px;
 		}
 	}
 }
 
 #diensten {
 	a {
-		border: 1px solid $red;
-		color: inherit;
-		font-size: 11px;
 		line-height: 32px;
 		position: relative;
 		padding: 3px 25px 5px 25px;
@@ -760,7 +808,7 @@ body:not(.home) {
 		}
 
 		&:hover {
-			background: $red;
+			background: white;
 
 			&:after {
 				transform: scaleX(1);
@@ -876,14 +924,14 @@ body:not(.home) {
 			div {
 				animation: fadeOpacity 1s forwards;
 			}
-			div:nth-child(1) {
-				animation-delay: 0;
+			.item:nth-child(1) {
+				animation-delay: .7s;
 			}
-			div:nth-child(2) {
+			.item:nth-child(2) {
 				animation-delay: .5s;
 			}
-			div:nth-child(3) {
-				animation-delay: 1s;
+			.item:nth-child(3) {
+				animation-delay: .7s;
 			}
 			div:nth-child(4) {
 				animation-delay: 1.5s;
@@ -1265,6 +1313,19 @@ body.page-template-contact {
 				margin-bottom: 25px;		
 			}
 		}
+	}
+
+	&.diensten {
+		.content-row {
+			.item {
+				flex: 0 0 35%;
+
+				&:nth-child(1) {
+					top: 0;
+					left: 0;
+				}
+			}
+		} 
 	}
 }
 
