@@ -7,10 +7,15 @@
 
 <div id="row1">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row">
             <div class="col-12 col-sm-7">
-                <div class="dienst-tekst">
-                    <?=get_field('omschrijving');?>
+                <div class="text">
+                    <?=get_field('info');?>
+                </div>
+            </div>
+            <div class="col-12 col-sm-5">
+                <div class="form">
+                    <?=get_field('formulier');?>
                 </div>
             </div>
         </div>

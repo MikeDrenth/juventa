@@ -10,7 +10,13 @@
 get_header();
 
 ?>
-
+	<?php
+		$image = get_field('header_afbeelding');
+		$imgUrl = $image['url'];
+	?>
+	<script>
+		document.getElementById("header-background").style.backgroundImage = "url('<?=$imgUrl;?>')";
+	</script>
 	<!-- Adding text in header on page, title + content block -->
 	<div class="scroll-down"><i class="fas fa-caret-down"></i></div>
 	<div class="header-text">

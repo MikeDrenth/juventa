@@ -12,6 +12,12 @@ body {
 		line-height: 1.5;
 }
 
+@media (min-width: 992px) {
+	body {
+		font-size: 18px;
+	}
+}
+
 /* ---- particles.js container ---- */ 
 body.home {
 	#particles-js{ position:absolute; width: 100%; height: 100%; z-index: 1;} 
@@ -77,6 +83,10 @@ a {
 	}
 }
 
+.padding-bottom {
+	padding-bottom: 5rem;
+}
+
 .logo-wrapper {
 	position: absolute;
 	left: 0;
@@ -140,7 +150,7 @@ a {
 	background: #ffffff45;
 	border-radius: 50%;
 	position: absolute;
-	bottom: 10vh;
+	bottom: 20vh;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -592,8 +602,23 @@ body:not(.home) {
 	background-position: center center;
 	color: #FFF;
 	height: 100vh;
-	width: 100%;
+	overflow: hidden;
 	position: relative;
+	width: 100%;
+
+	&:after {
+		background: $blue;
+    content: "";
+    height: 40rem;
+    left: -5%;
+    position: absolute;
+    right: -5%;
+    top: 90%;
+    -webkit-transform-origin: 0 0;
+    /* transform-origin: 0 0; */
+		z-index: 0;
+		transform: rotateZ(-4deg);
+	}
 }
 
 body:not(.home) {
@@ -822,7 +847,7 @@ body:not(.home) {
 
 @media (min-width: 768px) {
 	#row1 {
-		padding-top: 100px;
+		padding-top: 0;
 	}
 }
 
@@ -830,12 +855,14 @@ body:not(.home) {
 	opacity: 0;	
 
 	.items {
-		div {
-			opacity: 0;
-			margin-top: 25px;
+		.content-row {
+			div {
+				opacity: 0;
+				margin-top: 25px;
 
-			&:first-child {
-				margin-top: 0;
+				&:first-child {
+					margin-top: 0;
+				}
 			}
 		}
 	}
@@ -874,8 +901,10 @@ body:not(.home) {
 @media (min-width: 768px) {
 	.fadeAnimation {
 		.items {
-			div {
-				margin: 0;
+			.content-row {
+				div {
+					margin: 0;
+				}
 			}
 		}
 	}
@@ -1051,7 +1080,7 @@ body.page-template-clean {
 
 body.page-template-contact {
 	#header-background {
-		height: 500px;
+		height: 700px;
 	}
 
 	.header-text {
@@ -1068,6 +1097,18 @@ body.page-template-contact {
 }
 
 #pageContent {
+
+	h2,
+	h3,
+	h4 {
+		font-size: 24px;
+		margin-bottom: 1.5rem;
+		strong,
+		b {
+			color: $red;
+		}
+	}
+
 	.dienst {
 		padding: 3rem 0;
 	}
@@ -1275,9 +1316,55 @@ body.page-template-contact {
 		}
 
 		.usps {
-			margin-top: 100px;
+			margin: 5rem 0;
 		}
 	}
+}
+
+#contactContent {
+	.text {
+		a {
+			color: white;
+		}
+	}
+
+	.form {
+		textarea,
+		input {
+			background: $blue;
+			border: 1px solid white;
+			color: white;
+			transition: .5s;
+
+			&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+				color: white;
+				opacity: 1; /* Firefox */
+			}
+			
+			&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+				color: white;
+			}
+			
+			&::-ms-input-placeholder { /* Microsoft Edge */
+				color: white
+			}
+
+			&:focus {
+				border-color: transparent;
+			}
+		}
+
+		button {
+			background: $red;
+			border: none;
+			color: white;
+		}
+	}
+
+	#row2 {
+		padding: 3rem 0;
+	}
+
 }
 
 .footer-wrapper {

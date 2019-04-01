@@ -7,46 +7,41 @@
 
 <div id="row1">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-sm-5">
-                <div class="dienst-image">
-                    <?php
-                        $image = get_field('afbeelding');
-                    ?>
-                    <img data-src="<?=$image['url']?>" alt="<?=the_title();?>" class="lazy">
-                </div>
-            </div>
-            <div class="col-12 col-sm-7">
-                <div class="dienst-tekst">
-                    <?=get_field('omschrijving');?>
+        <div class="row">
+            <div class="col-12 col-md-10">
+                <div class="">
+                    <?php echo the_field('eerste_blok'); ?>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <?php if( have_rows('usps', 112) ): ?>
-                <div id="usps" class="usps fadeAnimation">
-                    <div class="container">
-                        <div class="row justify-content-center items">
-                            <div class="col-12 col-lg-10">
-                                <div class="row content-row">
-                                    <?php while ( have_rows('usps', 112) ) : the_row();  ?>
-                                        <?php if( get_row_layout() == 'usp' ): ?>
-                                            <div class="col-12 col-md-4">
-                                                <div class="item justify-content-center d-flex flex-column">
-                                                    <div class="icon">
-                                                        <?php the_sub_field('icon', 112); ?>
-                                                    </div>
-                                                    <?php the_sub_field('tekst', 112); ?>
-                                                </div>
+        <?php if( have_rows('usps', 112) ): ?>
+            <div id="usps" class="usps fadeAnimation">
+                <div class="row justify-content-center items">
+                    <div class="col-12 col-lg-10">
+                        <div class="row content-row">
+                            <?php while ( have_rows('usps', 112) ) : the_row();  ?>
+                                <?php if( get_row_layout() == 'usp' ): ?>
+                                    <div class="col-12 col-md-4">
+                                        <div class="item justify-content-center d-flex flex-column">
+                                            <div class="icon">
+                                                <?php the_sub_field('icon', 112); ?>
                                             </div>
-                                        <?php endif; ?>
-                                    <?php endwhile;?>
-                                </div>
-                            </div>
+                                            <?php the_sub_field('tekst', 112); ?>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+                            <?php endwhile;?>
                         </div>
                     </div>
                 </div>
-            <?php endif; ?>
+            </div>
+        <?php endif; ?>
+        <div class="row align-items-center padding-bottom">
+            <div class="col-12 col-lg-10">
+                <div class="">
+                    <?=get_field('tweede_blok');?>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -37,6 +37,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div class="hfeed site" id="page">
+	<section id="section1" class="section">
 	<div class="header-wrapper">
 		<div id="header-background" class="d-flex flex-column justify-content-center align-items-center">
 			<div class="menu-wrapper">

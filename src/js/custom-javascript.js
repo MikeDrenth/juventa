@@ -59,53 +59,34 @@ jQuery(document).ready(function($){
             }, 2000);
         });
     }
-    
-    if($('#diensten').length) {
-        // Function: Fade animation on diensten when in view
-        var diensten = document.getElementById("diensten");
-        var elementWatcher = scrollMonitor.create(diensten, -100);
-        elementWatcher.enterViewport(function() {
-            $(diensten).addClass('zoomInFadeIn');
-        });
-    }
 
-    if($('#usps').length) {
-        // Function: Fade animation on diensten when in view
-        var usps = document.getElementById("usps");
-        var elementWatcher = scrollMonitor.create(usps, -90);
-        elementWatcher.enterViewport(function() {
-            $(usps).addClass('zoomInFadeIn');
-        });
-    }
+    // //Full page scrolling initiate
+	$('#page').pagepiling({
+        direction: 'vertical',
+        verticalCentered: true,
+        scrollingSpeed: 700,
+        easing: 'swing',
+        loopBottom: false,
+        loopTop: false,
+        css3: true,
+        navigation: {
+            'textColor': '#FFF',
+            'bulletsColor': '#FFF',
+            'position': 'right',
+            'tooltips': ['Juventa Online', 'Diensten', 'Ons werk', 'Wie we zijn', 'Contact']
+        },
+       	normalScrollElements: null,
+        normalScrollElementTouchThreshold: 5,
+        touchSensitivity: 5,
+        keyboardScrolling: true,
+        sectionSelector: '.section',
+        animateAnchor: false,
+    });
 
-    if($('#highlights').length) {
-        // Function: Fade animation on highlights when in view
-        var highlights = document.getElementById("highlights");
-        var elementWatcher = scrollMonitor.create(highlights, -100);
-        elementWatcher.enterViewport(function() {
-            $('#highlights .items-title').addClass('startAnimation');
-        });
-    }
-
-    if($('#row3').length) {
-        // Function: Fade animation on row3 when in view
-        var row3 = document.getElementById("row3");
-        var elementWatcher = scrollMonitor.create(row3, -200);
-        elementWatcher.enterViewport(function() {
-            $(row3).addClass('startAnimation');
-        });
-    }
-
-    if($('.logo-wrapper').length) {
-        // Function: Add class to logo wrapper div after scrolling, mobile only
-        if($(window).width() < 991) { 
-            $(window).scroll(function() {
-                if ($(document).scrollTop() > 200) {
-                //$('.logo-wrapper').addClass('fixed');
-                }
-            });
-        }
-    }
+    // Adding classes to body when div is in view
+    changeBackgroundClass('diensten', 'greenBackground');
+    changeBackgroundClass('row3', 'redBackground');
+    changeBackgroundClass('contact', 'redBackground');
 
     if ($(".items-title .title").length) {
         // Add active to the 1st item to display after loading
@@ -113,13 +94,23 @@ jQuery(document).ready(function($){
         $('.items-image .image:first-child').addClass('active');
         // Show correct image with title on homepage on hover
         $('.items-title .title').on("hover", function() {
-        var dataAttr = $(this).attr('data-id');
-        $('.items-title .title').removeClass('active');
-        $(this).addClass('active');
-        $('.items-image .image').removeClass('active');
-        $('.items-image .image[data-id = '+dataAttr+']').addClass('active');
+            var dataAttr = $(this).attr('data-id');
+            $('.items-title .title').removeClass('active');
+            $(this).addClass('active');
+            $('.items-image .image').removeClass('active');
+            $('.items-image .image[data-id = '+dataAttr+']').addClass('active');
         });
     }
+
+    // Function: Add the background class to the body
+    function addBackgroundClass (backgroundColor) {
+        $('body').addClass(backgroundColor);
+    }
+
+    // // Function: Remove the current background class from the body
+    function removeBackgroundClass (backgroundColor)  {
+        $('body').removeClass(backgroundColor);
+    } 
 
     $(function() {
         var prevScroll = $(document).scrollTop();
@@ -139,6 +130,21 @@ jQuery(document).ready(function($){
             prevScroll = newScroll;
         });
     });
+
+    // Function: Add classes to body when given div is in view after scrolling
+    function changeBackgroundClass(divId, backgroundColor) {
+        var getContent = document.getElementById(divId);
+        // setting -200 to start the effect a bit sooner    
+        var elementWatcher = scrollMonitor.create(getContent, {top: -200});
+        // Add class to body when in viewport
+        elementWatcher.enterViewport(function() {
+            addBackgroundClass(backgroundColor);
+        });
+        // Remove the class when div is out the view
+        elementWatcher.exitViewport(function() {
+            removeBackgroundClass(backgroundColor);
+        });
+    }
 
     $(window).load(function() {
         // Function: Lazy load images after page load
