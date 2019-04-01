@@ -43,15 +43,17 @@
             <div class="row justify-content-center items">
                 <div class="col-12">
                     <div class="row content-row justify-content-center">
-                        <?php while ( have_rows('overige_diensten') ) : the_row();  ?>
-                            <?php if( get_row_layout() == 'dienst' ): ?>
-                                <div class="col-12 col-sm-6 col-md-4">
-                                    <div class="item">
-                                        <?php the_sub_field('omschrijving'); ?>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                        <?php endwhile;?>
+                        <div class="col-12 col-lg-12">
+                            <div class="d-flex justify-content-center flex-column flex-lg-row">
+                                <?php while ( have_rows('overige_diensten') ) : the_row();  ?>
+                                    <?php if( get_row_layout() == 'dienst' ): ?>
+                                        <div class="item">
+                                            <?php the_sub_field('omschrijving'); ?>
+                                        </div>
+                                    <?php endif; ?>
+                                <?php endwhile;?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
