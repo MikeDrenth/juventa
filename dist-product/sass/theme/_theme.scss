@@ -150,7 +150,7 @@ a {
 	background: #ffffff45;
 	border-radius: 50%;
 	position: absolute;
-	bottom: 20vh;
+	bottom: 5%;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -600,6 +600,7 @@ body:not(.home) {
 
 #header-background {
 	background-position: center center;
+	background-image: url(https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
 	color: #FFF;
 	height: 100vh;
 	overflow: hidden;
@@ -607,17 +608,19 @@ body:not(.home) {
 	width: 100%;
 
 	&:after {
-		background: $blue;
+		background: #161a39ab;
     content: "";
     height: 40rem;
-    left: -5%;
+    left: 0;
     position: absolute;
-    right: -5%;
-    top: 90%;
+    /* right: -5%; */
+    top: 0;
     -webkit-transform-origin: 0 0;
-    /* transform-origin: 0 0; */
-		z-index: 0;
-		transform: rotateZ(-4deg);
+    z-index: 0;
+    /* -webkit-transform: rotateZ(-4deg); */
+    /* transform: rotateZ(-4deg); */
+    width: 100%;
+    height: 100%;
 	}
 }
 
@@ -808,7 +811,7 @@ body:not(.home) {
 		}
 
 		&:hover {
-			background: white;
+			color: white;
 
 			&:after {
 				transform: scaleX(1);
